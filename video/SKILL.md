@@ -34,13 +34,14 @@ Use this short selector. The full reasoning is in the chosen file.
 | Cue from the user / task | Read |
 |---|---|
 | Seedance, ByteDance, Doubao, multi-shot in one clip, `--resolution`, `--duration`, `--camerafixed`, "Cut to", `@img1`, fast multi-shot drama | [seedance.md](references/seedance.md) |
-| Kling, Kuaishou, Element Binding, Motion Brush, Motion Control, dedicated negative prompt field | [kling.md](references/kling.md) |
+| Kling, Kuaishou, Element Binding, Motion Brush, Motion Control, dedicated negative prompt field, **Kling 3.0 multi-shot with `[Character A: ...]` labels, native dialogue + lip-sync, 15s** | [kling.md](references/kling.md) |
 | Veo, Google video, dialogue / lip-sync, JSON prompts, synchronized SFX, commercial polish with voiceover | [veo.md](references/veo.md) |
 
 Default if nothing in the request hints at a model:
-- Multi-shot narrative or fast montage drama → Seedance.
-- Dialogue / commercial polish / synchronized SFX → Veo.
-- Character consistency across many social clips → Kling.
+- Multi-shot narrative or fast montage drama → Seedance, or Kling 3.0 if dialogue is involved.
+- Dialogue / commercial polish / synchronized SFX → Veo, or Kling 3.0 for multi-character dialogue scenes up to 15s.
+- Character consistency across many social clips → Kling 2.6 Pro (cheaper) or Kling 3.0 (with in-prompt `[Character A: ...]` labels).
+- 10-15s continuous narrative with audio → Kling 3.0.
 
 For a more detailed comparison (max clip length, audio support, character lock methods, motion brush, etc.), read the model file you picked. Do not load all three.
 

@@ -101,7 +101,8 @@ Identity block must include: face shape, eye color, skin tone. Hair color, lengt
 
 Model-specific syntax for character locking:
 - Seedance: `@img1` reference + identity block (see `seedance.md` §10)
-- Kling: Element Binding with 3-4 reference images (see `kling.md`)
+- Kling 1.x – 2.x: Element Binding with 3-4 reference images (see `kling.md` §7)
+- Kling 3.0: in-prompt `[Character A: <full identity>]` labels, optionally combined with Element Library (see `kling.md` §3)
 - Veo: reference ingredients / JSON identity (see `veo.md`)
 
 ## 9. U8. No contradictions
@@ -129,7 +130,9 @@ Default splits:
 - 30s = 6 × 5s
 - 60s = 12 × 5s
 
-Seedance is the only exception. It can pack 2-3 shots into one 5-10s clip via multi-shot syntax (see `seedance.md` §8).
+Two exceptions:
+- Seedance — 2-3 shots inside one 5-10s clip via "Cut to" syntax (see `seedance.md` §8).
+- Kling 3.0 — up to 6 shots inside one generation, up to 15s, with native audio and dialogue (see `kling.md` §3).
 
 ## 12. U11. The final image rule
 

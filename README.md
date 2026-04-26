@@ -29,9 +29,10 @@ This is what a creative director, copywriter, or AI-content team uses instead of
 
 | Model | Family | Best for | Notes |
 |---|---|---|---|
-| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot in one clip (unique), fast montage drama, 1080p, up to 12s | `--resolution / --duration / --camerafixed` |
+| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot in one clip, fast montage drama, 1080p, up to 12s | `--resolution / --duration / --camerafixed`, `@img1` character lock |
 | **Seedance Lite** | ByteDance | Cheaper batch generation, 720p | — |
-| **Kling 1.5 / 2.0 / 2.6** | Kuaishou | Character consistency (Element Binding), Motion Brush, Motion Transfer, social verticals | Dedicated negative prompt field |
+| **Kling 1.6 / 2.1 / 2.5 Turbo / 2.6 Pro** | Kuaishou | Character consistency via Element Binding, Motion Brush, Motion Transfer, social verticals | Dedicated negative prompt field |
+| **Kling 3.0** (pro / standard) | Kuaishou | Native multi-shot up to 6 shots in one generation, native dialogue + lip-sync, voice tone control, 15s continuous output, in-prompt `[Character A: ...]` labeling | API exclusively on fal.ai |
 | **Veo 3 / Veo (flagship)** | Google | Native dialogue + lip-sync, synchronized SFX, JSON prompts, commercial polish | Up to 8s |
 | Runway Gen-4, Luma Dream Machine, Pika 2, Sora | misc | Generic guidance via universal rules | No dedicated reference yet |
 
@@ -118,9 +119,10 @@ Writes prompts for AI video generation. Operates as a hybrid Director / Screenwr
 
 | Decision cue | Use |
 |---|---|
-| Multi-shot in one clip, fast montage drama, "Cut to" syntax | Seedance |
-| Character consistency across many social clips, Motion Brush | Kling |
-| Dialogue, lip-sync, synchronized SFX, voiceover commercial | Veo |
+| Multi-shot in one clip, fast montage drama, "Cut to" syntax, no audio needed | Seedance |
+| Multi-shot **with dialogue + lip-sync**, up to 15s, multi-character voice control | **Kling 3.0** |
+| Character consistency across many social clips (no dialogue), Motion Brush, cheaper | Kling 2.6 Pro |
+| Dialogue, lip-sync, synchronized SFX, polished voiceover commercial, JSON prompts | Veo |
 
 **Reference files inside `video/`:** `dramaturgy.md`, `universal-rules.md`, `seedance.md`, `kling.md`, `veo.md`, `role-modes.md`, `patterns-and-genres.md`, `camera-lighting-vocabulary.md`, `fixes-and-skeletons.md`.
 

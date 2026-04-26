@@ -29,9 +29,10 @@
 
 | Модель | Семейство | Для чего | Заметки |
 |---|---|---|---|
-| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot в одном клипе (уникально), быстрый монтаж драмы, 1080p, до 12 секунд | `--resolution / --duration / --camerafixed` |
+| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot в одном клипе, быстрый монтаж драмы, 1080p, до 12 секунд | `--resolution / --duration / --camerafixed`, `@img1` для лока персонажа |
 | **Seedance Lite** | ByteDance | Дешёвая batch-генерация, 720p | — |
-| **Kling 1.5 / 2.0 / 2.6** | Kuaishou | Преемственность персонажа (Element Binding), Motion Brush, Motion Transfer, social-вертикалки | Отдельное поле негативного промпта |
+| **Kling 1.6 / 2.1 / 2.5 Turbo / 2.6 Pro** | Kuaishou | Преемственность персонажа через Element Binding, Motion Brush, Motion Transfer, social-вертикалки | Отдельное поле негативного промпта |
+| **Kling 3.0** (pro / standard) | Kuaishou | Нативный multi-shot до 6 шотов в одной генерации, нативные диалоги + lip-sync, контроль тона голоса, 15 секунд непрерывного вывода, лейблы `[Character A: ...]` прямо в промпте | API эксклюзивно на fal.ai |
 | **Veo 3 / Veo (flagship)** | Google | Нативные диалоги + lip-sync, синхронные SFX, JSON-промпты, рекламная полировка | До 8 секунд |
 | Runway Gen-4, Luma Dream Machine, Pika 2, Sora | разное | Общая логика через universal rules | Без отдельного reference |
 
@@ -118,9 +119,10 @@ visual-skills/
 
 | Сигнал из задачи | Использовать |
 |---|---|
-| Multi-shot в одной генерации, быстрый монтаж драмы, синтаксис «Cut to» | Seedance |
-| Преемственность персонажа в social-клипах, Motion Brush | Kling |
-| Диалоги, lip-sync, синхронные SFX, рекламная озвучка | Veo |
+| Multi-shot в одной генерации, быстрый монтаж драмы, синтаксис «Cut to», без диалогов | Seedance |
+| Multi-shot **с диалогами + lip-sync**, до 15 секунд, многоперсонажный voice control | **Kling 3.0** |
+| Преемственность персонажа в social-клипах (без диалогов), Motion Brush, дешевле | Kling 2.6 Pro |
+| Диалоги, lip-sync, синхронные SFX, полированная рекламная озвучка, JSON-промпты | Veo |
 
 **Reference-файлы внутри `video/`:** `dramaturgy.md`, `universal-rules.md`, `seedance.md`, `kling.md`, `veo.md`, `role-modes.md`, `patterns-and-genres.md`, `camera-lighting-vocabulary.md`, `fixes-and-skeletons.md`.
 
