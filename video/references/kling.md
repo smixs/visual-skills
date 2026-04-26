@@ -31,7 +31,7 @@ Kling models vary widely in how many distinct elements they can handle in a sing
 - **Kling 2.1 Pro.** 1080p at 30fps. Motion Brush. End frame control.
 - **Kling 2.5 Turbo Pro.** Maximum 3-4 distinct elements.
 - **Kling 2.6 Pro.** 5-7 elements. Motion Control. Element Binding for character consistency.
-- **Kling 3.0.** Multi-shot in one generation (up to 6 shots). Native audio with dialogue and lip-sync. 15s continuous output. Strongest character and scene consistency. Two tiers: v3/pro and v3/standard. **API exclusively available on fal.ai.**
+- **Kling 3.0.** Multi-shot in one generation (up to 6 shots). Native audio with dialogue and lip-sync. 15s continuous output. Strongest character and scene consistency. Two tiers: v3/pro and v3/standard.
 
 If in doubt about the user's version, ask. The prompting protocol differs between 1.x – 2.x (sections 4-9) and 3.0 (section 3).
 
