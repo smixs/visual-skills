@@ -1,130 +1,142 @@
-# 🎨 Visual Skills для Claude
+# 🎨 Visual Skills для Claude — промпты для image и video
 
-[![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.anthropic.com)
+[![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Skills: 2](https://img.shields.io/badge/Skills-2-orange?style=flat-square)](#что-внутри)
+[![image: Nano Banana + GPT Image 2](https://img.shields.io/badge/image-Nano_Banana_%2B_GPT_Image_2-ff69b4?style=flat-square)](#-image--что-делает)
+[![video: Seedance + Kling + Veo](https://img.shields.io/badge/video-Seedance_%2B_Kling_%2B_Veo-orange?style=flat-square)](#-video--что-делает)
 
 **🇬🇧 [Read in English](README.md)**
 
-Два production-grade Claude-скилла для prompt engineering под AI-генераторы изображений и видео. Они сами не генерируют картинки и видео — они пишут промпты так, чтобы модель не могла облажаться. Каждый скилл закрепляет дисциплину, которая отделяет сильную работу от «cinematic masterpiece» наполнителя: специфичный синтаксис под конкретную модель, драматургия, конкретные детали вместо размытой похвалы.
+Два профессиональных Claude-скилла для production-генерации визуального AI-контента. Они пишут production-grade промпты под топовые image- и video-модели — выбирают правильную модель под задачу, применяют её специфичный синтаксис и возвращают готовый к копированию промпт.
 
-Архитектурное правило одно: **SKILL.md — это маршрутизатор, а не описание процесса.** Тело каждого скилла намеренно тонкое, чтобы агент не мог симулировать результат, прочитав только его. Он обязан загрузить reference-файлы в строгом порядке прежде чем выдать ответ.
-
----
-
-## Зачем это нужно
-
-Большинство «image prompt» и «video prompt» библиотек ломаются одинаково: подсовывают модели абзац общих советов («будь конкретным, добавляй кинематографичный свет, прописывай детали») и ждут сильного результата. Что происходит на самом деле — модель читает советы, решает что этого хватит, и выдаёт ленивые шаблонные промпты, которые игнорируют физику конкретного генератора.
-
-Эти скиллы лечат проблему на уровне архитектуры:
-
-- **Физика конкретной модели.** Nano Banana хочет натуральный язык параграфами и игнорирует числовые `50mm/f-stop`; GPT Image 2 хочет 5-слотовый размеченный шаблон и ломается от похвалы «stunning/epic/masterpiece»; Seedance multi-shot нужен `@img1` для лока персонажа и явный anti-mush блок. У каждой модели свой reference.
-- **Обязательный порядок чтения.** `SKILL.md` не содержит правил. Он содержит порядок, в котором правила надо загрузить. Это вынуждает агента идти в references, где живёт ремесло.
-- **Драматургия + закон деталей** (для видео). Промпт строится из желания героя + препятствия + геометрии + управляемого взгляда + ритма; каждый кадр обязан владеть давлением среды + физическим микро-действием + звуковым или визуальным мотивом. Красивый кадр без драматургии — это обои.
+Это то, чем пользуется креативный директор, копирайтер или команда AI-контента вместо «be cinematic, 4k, masterpiece» наполнителя.
 
 ---
 
-## Что внутри
+## ✨ Поддерживаемые модели
+
+### 🖼️ Image-модели
+
+| Модель | Семейство | Для чего | Заметки |
+|---|---|---|---|
+| **Nano Banana 2** (Flash) | Google Gemini 3 Flash Image | Дефолтная рабочая лошадка, быстро и дёшево | ~$0.04/картинка |
+| **Nano Banana Pro** | Google Gemini 3 Pro Image | Сложные многослойные сцены, до 14 референсов, image grounding (реальные места и виды) | ~$0.15/картинка |
+| **GPT Image 2** | OpenAI | Brand-ассеты, плотный текст, UI-моки, edit с жёстким preservation, до 16 референсов | `quality: low / medium / high` |
+| GPT Image 1.5 / 1 | OpenAI legacy | Только для миграции | — |
+| GPT Image 1-mini | OpenAI | Дешёвые exploratory-батчи | — |
+
+### 🎬 Video-модели
+
+| Модель | Семейство | Для чего | Заметки |
+|---|---|---|---|
+| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot в одном клипе (уникально), быстрый монтаж драмы, 1080p, до 12 секунд | `--resolution / --duration / --camerafixed` |
+| **Seedance Lite** | ByteDance | Дешёвая batch-генерация, 720p | — |
+| **Kling 1.5 / 2.0 / 2.6** | Kuaishou | Преемственность персонажа (Element Binding), Motion Brush, Motion Transfer, social-вертикалки | Отдельное поле негативного промпта |
+| **Veo 3 / Veo (flagship)** | Google | Нативные диалоги + lip-sync, синхронные SFX, JSON-промпты, рекламная полировка | До 8 секунд |
+| Runway Gen-4, Luma Dream Machine, Pika 2, Sora | разное | Общая логика через universal rules | Без отдельного reference |
+
+---
+
+## 🤝 Совместимость
+
+Это обычные Claude Skills — markdown-файлы плюс запакованный `.skill` архив. Работают в любом агенте или IDE, поддерживающем формат Claude Skill:
+
+| Инструмент | Как подключить |
+|---|---|
+| **Claude Code** | Скопируй `image/` или `video/` в `~/.claude/skills/` (или `claude install image.skill`) |
+| **Claude.ai Projects** | Загрузи папку-источник в knowledge base проекта |
+| **Claude Agent SDK** | Подключи папку скилла в определении агента |
+| **Cursor / Windsurf** | Скопируй папку-источник в project rules |
+| **Cline / Roo Code** | То же — папку в контекст агента |
+| **OpenCode / opencode-ai** | Добавь как skill в конфиг агента |
+| **Hermes-agent** | Загрузи через skill loader агента |
+| Любой LLM-агент со структурированным prompt-форматом | Работает — внутри обычный markdown, без vendor lock-in |
+
+Скиллы работают с Claude Opus / Sonnet / Haiku, и плавно деградируют на GPT / Gemini / open-weights агентах (markdown model-agnostic).
+
+---
+
+## 📦 Что в репо
 
 ```
 visual-skills/
-├── image/                              # Исходник — Image-скилл
-│   ├── SKILL.md                        # Тонкий роутер с обязательным порядком чтения
-│   └── references/
-│       ├── models.md                   # Выбор: Nano Banana или GPT Image 2
-│       ├── nano-banana.md              # NB2 / NBP специфика
-│       ├── gpt-image.md                # GPT Image 2 (5-slot шаблон, anti-slop)
-│       ├── golden-rules.md             # Универсальные правила
-│       ├── prompt-framework.md         # Чеклист элементов, режимы детализации
-│       ├── creative-direction.md       # Свет, камера, цвет, материалы
-│       ├── text-rendering.md           # Текст в кадре, инфографика
-│       ├── editing.md                  # Удаление объектов, смена света, колоризация
-│       ├── characters.md               # Преемственность персонажа между кадрами
-│       ├── slides.md                   # Презентационные слайды
-│       ├── storyboards.md              # Последовательный нарратив
-│       ├── structural.md               # Скетч → финал, wireframes
-│       └── dimensional.md              # 2D → 3D, планы этажей, изометрия
-├── image.skill                         # Готовый запакованный скилл
-├── video/                              # Исходник — Video-скилл
-│   ├── SKILL.md                        # Тонкий роутер с обязательным порядком чтения
-│   └── references/
-│       ├── dramaturgy.md               # Формула сцены, Murch Rule of Six, закон деталей
-│       ├── universal-rules.md          # U1-U12 — правила для любой видео-модели
-│       ├── seedance.md                 # Seedance 2.0 (production 11-блочный скелет, @img1)
-│       ├── kling.md                    # Kling (Element Binding, Motion Brush)
-│       ├── veo.md                      # Veo (диалоги, lip-sync, JSON-промпты)
-│       ├── role-modes.md               # Режиссёр / Сценарист / Монтажёр
-│       ├── patterns-and-genres.md      # Реклама, музыкальное видео, драма, экшн
-│       ├── camera-lighting-vocabulary.md
-│       └── fixes-and-skeletons.md      # Continuity, multi-clip, частые проблемы
-└── video.skill                         # Готовый запакованный скилл
+├── image/              # Папка-источник image-скилла
+├── image.skill         # Запакованный скилл — drop-in инсталлер
+├── video/              # Папка-источник video-скилла
+├── video.skill         # Запакованный скилл — drop-in инсталлер
+├── README.md / README.ru.md
+└── LICENSE             # MIT
 ```
 
 ---
 
-## Два скилла
+## 🖼️ `image` — что делает
 
-### 🖼️ `image` — Image Prompting
+Пишет промпты для AI-генерации картинок. Выбирает Nano Banana или GPT Image 2 под задачу, применяет специфичный синтаксис модели, возвращает готовый к копированию промпт с заголовком (модель, quality, size).
 
-Пишет промпты для **Nano Banana** (Gemini 3 Pro / 3 Flash от Google) и **GPT Image 2** (OpenAI). Скилл сам выбирает модель под задачу, применяет её специфичный синтаксис и возвращает готовый к копированию промпт с заголовками model + quality + size.
+**Покрываемые задачи:**
 
-**Что покрывает:**
-- Editorial-фотографию, продуктовую съёмку, постеры, рекламные креативы
-- UI-моки и продуктовые скриншоты
-- Инфографику, диаграммы, слайды
-- Edit-задачи — try-on, смена освещения/погоды, удаление объектов, реставрация, локализация
-- Преемственность персонажа между кадрами
-- Сториборды, комиксы, последовательный нарратив
+- 📰 Editorial-фотография, постеры, рекламные креативы
+- 🛍️ Продуктовая съёмка, упаковка, моки
+- 🖥️ UI-моки и продуктовые скриншоты
+- 📊 Инфографика, диаграммы, слайды
+- ✏️ Edit — try-on, смена света/погоды, удаление объектов, реставрация, локализация
+- 👤 Преемственность персонажа между кадрами
+- 🎞️ Сториборды, комиксы, последовательный нарратив
+- 📐 Скетч → фото, wireframes, 2D → 3D, планы этажей
 
-**Разделение по моделям (выбор фундаментально меняет синтаксис):**
+**Разделение по моделям:**
 
 | Сигнал из задачи | Использовать |
 |---|---|
-| Реальное географическое место / вид животного (image grounding) | Nano Banana |
-| Экстремальное соотношение сторон (1:8, 8:1, 4:1) | Nano Banana |
-| Edit с жёстким preservation (try-on, swap, смена погоды) | GPT Image 2 |
+| Реальное место / вид животного (image grounding) | Nano Banana |
+| Экстремальные пропорции (1:8, 8:1, 4:1) | Nano Banana |
+| Edit с жёстким preservation (try-on, swap) | GPT Image 2 |
 | Мелкий плотный текст, multi-font, brand-ассеты | GPT Image 2 (`quality: high`) |
-| UI mockup / продуктовый скриншот | GPT Image 2 |
-| Дефолт, быстро и дёшево | Nano Banana 2 |
+| UI-мок, продуктовый скриншот | GPT Image 2 |
+| Дефолт, быстро/дёшево | Nano Banana 2 |
 
-### 🎬 `video` — Video Prompting
+**Reference-файлы внутри `image/`:** `models.md`, `nano-banana.md`, `gpt-image.md`, `golden-rules.md`, `prompt-framework.md`, `creative-direction.md`, `text-rendering.md`, `editing.md`, `characters.md`, `slides.md`, `storyboards.md`, `structural.md`, `dimensional.md`.
 
-Пишет промпты для **Seedance** (ByteDance, multi-shot в одном клипе), **Kling** (Kuaishou, Element Binding для лока персонажа) и **Veo** (Google, нативные диалоги и lip-sync). Работает как гибрид Режиссёр / Сценарист / Монтажёр — и отказывается выдавать промпт, не прогнав сначала dramaturgy check и three-detail audit.
+---
 
-**Что покрывает:**
-- Одиночные клипы и multi-clip-истории, склеенные на монтаже
-- Режиссёрские treatment'ы
-- Раскадровки и shot list'ы (14-польная карточка кадра)
-- Аудит чужих промптов («вот промпт, почини»)
-- Перевод сценария в shot-by-shot промпты
-- Преемственность между клипами
-- Жанровые паттерны: реклама, музыкальное видео, драма, экшн, fashion, UGC, продуктовая съёмка
+## 🎬 `video` — что делает
+
+Пишет промпты для AI-генерации видео. Работает как гибрид Режиссёр / Сценарист / Монтажёр — применяет кинематографическую драматургию (формула сцены, Murch Rule of Six, блокинг, staging) и специфичный синтаксис каждой модели (Seedance multi-shot, Kling Element Binding, Veo JSON / диалоги).
+
+**Покрываемые задачи:**
+
+- 🎯 Одиночные 5-секундные клипы и склеенные multi-clip истории (15с / 30с / 60с+)
+- 🎞️ Режиссёрские treatment'ы и shot list'ы (14-польная карточка кадра)
+- 📋 Раскадровки из сценария
+- 🔧 Аудит чужих промптов («вот промпт, почини»)
+- 📝 Перевод сценариев и сториборда в shot-by-shot промпты
+- 🔗 Continuity между клипами (лок персонажа, wardrobe, логика света)
+- 🎭 Жанровые паттерны: реклама, музыкальное видео, драма, экшн, fashion, UGC, продуктовая съёмка
 
 **Разделение по моделям:**
 
 | Сигнал из задачи | Использовать |
 |---|---|
 | Multi-shot в одной генерации, быстрый монтаж драмы, синтаксис «Cut to» | Seedance |
-| Преемственность персонажа в множестве social-клипов, Motion Brush | Kling |
-| Диалоги, lip-sync, синхронные SFX, рекламная полировка с озвучкой | Veo |
+| Преемственность персонажа в social-клипах, Motion Brush | Kling |
+| Диалоги, lip-sync, синхронные SFX, рекламная озвучка | Veo |
 
-**Главное правило:** каждый кадр владеет тремя деталями — давление среды, физическое микро-действие, звуковой или визуальный мотив. Слова «stunning», «epic», «cinematic», «masterpiece» не рендерятся — они маркируют ленивого автора. Скилл проверяет каждый кадр по этому правилу прежде чем отдать промпт пользователю.
+**Reference-файлы внутри `video/`:** `dramaturgy.md`, `universal-rules.md`, `seedance.md`, `kling.md`, `veo.md`, `role-modes.md`, `patterns-and-genres.md`, `camera-lighting-vocabulary.md`, `fixes-and-skeletons.md`.
 
 ---
 
-## Установка
+## 🚀 Установка
 
-### Вариант A — поставить `.skill` архив
+### Вариант A — поставить запакованный `.skill`
+
+Скачай `image.skill` и/или `video.skill` из репо и загрузи через свой Claude-клиент:
 
 ```bash
-# image-скилл
+# Claude Code
 claude install image.skill
-
-# video-скилл
 claude install video.skill
 ```
-
-Или скачайте `image.skill` / `video.skill` из этого репо и загрузите через свой Claude-клиент.
 
 ### Вариант B — клонировать исходники
 
@@ -132,75 +144,64 @@ claude install video.skill
 git clone https://github.com/smixs/visual-skills.git
 ```
 
-Затем скопируйте папки `image/` и/или `video/` в свою skills-директорию (`~/.claude/skills/` для Claude Code или skill-папка вашего проекта).
+Потом скопируй `image/` и/или `video/` в свою skills-директорию:
 
-Скиллы работают с любым агентом, поддерживающим формат Claude Skill — Claude Code, Claude Projects, Cursor, Windsurf. Исходник — обычный markdown, без vendor lock-in.
+```bash
+# Claude Code
+cp -r visual-skills/image  ~/.claude/skills/
+cp -r visual-skills/video  ~/.claude/skills/
+
+# Cursor / Windsurf — папка project rules
+cp -r visual-skills/image  .cursor/rules/
+```
 
 ---
 
-## Примеры использования
+## 💡 Примеры использования
 
-### Image — короткие промпты
-
+**Image — короткие промпты:**
 > «Сделай промпт для постера офисной кружки с надписью BEST DAY EVER, фон #f5f5dc, 16:9»
-
+>
 > «Отредактируй этот продуктовый shot — поменяй фон на чистый белый, бутылку оставь как есть»
 
-> «Нужна обложка для блога. Тема: AI-агенты заменяют аналитиков. Стиль — minimalist editorial.»
-
-### Image — с явным указанием модели
-
+**Image — с явным указанием модели:**
 > «Используй GPT Image 2 для UI-мока медитейшн-приложения в стиле Spotify, quality high»
+>
+> «Используй Nano Banana Pro — кинематографичная фотография Карлова моста в Праге в золотой час, архитектура должна быть точной»
 
-> «Используй Nano Banana Pro — сгенерируй кинематографичную фотографию Карлова моста в Праге в золотой час, архитектура должна быть точной»
-
-### Video — одиночный промпт
-
+**Video — одиночный промпт:**
 > «Напиши промпт для Seedance — голодный мужик ночью находит последнюю сосиску в холодильнике, 5 секунд, мульти-шот»
 
-### Video — полный разбор
-
+**Video — полный разбор:**
 > «Раскадруй 30-секундный ролик про чувство вины. Главная эмоция — guilt. Опорный объект — телефон с непрочитанным сообщением.»
-
+>
 > «Сделай аудит этого промпта: [...]. Что сломано, как починить?»
-
+>
 > «Переведи этот сценарий в 6 × 5-секундных промптов для Seedance.»
 
 ---
 
-## Архитектурные заметки
+## Как это устроено (коротко)
 
-### SKILL.md — маршрутизатор, а не описание процесса
+Каждый `SKILL.md` — тонкий маршрутизатор. В теле сказано: «прежде чем выдать промпт, загрузи эти reference-файлы в этом порядке». Сами правила — специфичный синтаксис каждой модели, драматургия, Закон деталей, запрещённые слова, которые ломают модель — живут только в `references/`. Это вынуждает агента идти в references и спасает от ленивого generic-ответа.
 
-Оба `SKILL.md` намеренно короткие (~90-100 строк). Они содержат:
-
-1. Frontmatter с триггерами
-2. 2-4 строки идентичности скилла
-3. **Mandatory reading order** — пронумерованные шаги с wikilinks на reference-файлы, по одной короткой строке на файл
-4. Output format
-5. Final response style (что предпочитать / чего избегать)
-
-Всё. Никаких правил, примеров, decision tree длиннее 3 строк. Само ремесло живёт только в `references/`.
-
-**Почему так:** когда SKILL.md содержит процесс, агент читает тело, решает «я знаю что делать», и пропускает references. Результат — ленивые шаблонные промпты. Принуждение агента к конкретным файлам через последовательность «DO NOT WRITE A PROMPT WITHOUT THIS» эмпирически решает эту проблему.
-
-### Progressive disclosure с жёстким порядком
-
-Anthropic в документации Skills называет это *progressive disclosure*: метаданные (всегда в контексте) → SKILL.md (загружается при триггере) → references (по требованию). Эти скиллы идут дальше — **мандатируют порядок**: model-файл загружается до universal rules, dramaturgy до любого model-файла, three-detail check после обоих. Агент не свободен пропускать шаги.
-
-### Один главный закон на скилл
-
-- **Image:** *model-файл нон-негошиабельный.* Nano Banana и GPT Image 2 любят разный синтаксис. Пропуск model-файла — главная причина слабых промптов.
-- **Video:** *детали усиливают эмоцию, лень убивает промпт.* Драматургия может быть идеальной, но один тонкий кадр утянет всю последовательность в кашу. Каждый кадр аудитится по правилу трёх деталей перед отдачей.
+Для video отдельно: каждый кадр обязан владеть тремя конкретными деталями — давление среды (холодный свет холодильника, мокрый асфальт, мерцающая лампа), физическое микро-действие (сжатая челюсть, побелевшие костяшки), и звуковой/визуальный мотив. Слова «cinematic», «epic», «stunning», «masterpiece» запрещены — они не рендерятся.
 
 ---
 
-## Credits
+## Credits и источники
 
-- **Image-гайды** — Nano Banana через официальный cookbook Google и Seedance-гайды ByteDance на fal.ai; GPT Image 2 через OpenAI developers cookbook и GPT Image 2 prompting guide на fal.ai.
-- **Video-драматургия** — Walter Murch (*In the Blink of an Eye*, Rule of Six), Akira Kurosawa (среда как персонаж), David Fincher (мотивированная камера), Steven Spielberg (пространственная ясность), Jonathan Glazer (видеоклип как одна визуальная фраза), Bong Joon Ho (раскадровка после локаций).
-- **Model-референсы** — ByteDance Seedance 2.0 docs, Kuaishou Kling docs, Google Veo docs.
+- **Nano Banana** — Google Gemini 3 Pro Image / Flash Image, промптинг через гайды fal.ai и Google AI Studio.
+- **GPT Image 2** — OpenAI, через OpenAI developers cookbook и GPT Image 2 prompting guide на fal.ai.
+- **Seedance** — ByteDance Seed, официальная документация Seedance 2.0.
+- **Kling** — Kuaishou, официальная документация Kling.
+- **Veo** — Google DeepMind, официальная документация Veo.
+- **Видео-драматургия** — Walter Murch (*In the Blink of an Eye*, Rule of Six), Akira Kurosawa (среда как персонаж), David Fincher (мотивированная камера), Steven Spielberg (пространственная ясность), Jonathan Glazer (видеоклип как одна визуальная фраза), Bong Joon Ho (раскадровка после локаций).
 
 ## Лицензия
 
-MIT — форкайте, адаптируйте, делайте промпты лучше.
+MIT — форкайте, адаптируйте, делайте визуальный контент лучше.
+
+---
+
+**Теги:** `claude` · `claude-skills` · `claude-code` · `claude-agent-sdk` · `prompt-engineering` · `ai-image-generation` · `ai-video-generation` · `nano-banana` · `gpt-image` · `gpt-image-2` · `seedance` · `kling` · `veo` · `creative-director` · `cursor` · `windsurf` · `cline` · `opencode` · `hermes-agent`
