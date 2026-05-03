@@ -1,14 +1,12 @@
 ---
 name: image
 description: >
-  Image prompting skill — пишет готовые промпты для двух семей моделей: Nano Banana
-  (NBP / NB2, Gemini 3 Pro / Flash) и GPT Image 2 (OpenAI). Skill сам не запускает
-  генерацию, только формирует промпт и помечает рекомендуемую модель / quality / size.
-  Use when пользователь говорит "нарисуй", "сгенерируй картинку", "сделай изображение",
-  "напиши промпт для image gen", запрашивает blog covers, slides, инфографику, постер,
-  product shot, UI mockup, storyboard, comic, character sheet, edit/colorize, virtual
-  try-on, style transfer. Triggers: "image prompt", "промпт для картинки", nb, nano banana,
-  NBP, NB2, gpt-image, gpt image 2, gpt-image-2, "AI image".
+  Image prompting skill for Nano Banana (NBP/NB2) and GPT Image 2. Writes ready-to-use
+  prompts with model/quality/size recommendations. Use when: "нарисуй", "сгенерируй
+  картинку", "image prompt", "промпт для картинки", blog covers, slides, posters,
+  product shots, UI mockups, storyboards, character sheets, edit/colorize, style transfer,
+  vision analysis, image-to-prompt, nb, NBP, NB2, gpt-image-2, multi-panel grids,
+  ecommerce product photography, fashion editorial, food/beverage ads, cinematic portraits.
   Do NOT use for: video (use video skill), 3D models, audio, non-image tasks.
 ---
 
@@ -55,6 +53,16 @@ Pick zero or more, depending on what the user asked for:
 - Sequential narrative (storyboard, comic, panel sequence) → [storyboards.md](references/storyboards.md)
 - Sketch → final, wireframes, structural input → [structural.md](references/structural.md)
 - 2D → 3D, floor plans, isometric → [dimensional.md](references/dimensional.md)
+- **Vision analysis / image-to-prompt / style transfer from a reference image** → [vision-decomposer.md](references/vision-decomposer.md). Load this whenever the user attaches an image and asks to recreate, match, decompose, or transfer its style.
+- **Multi-panel compositions** (grids, collages, storyboard sheets in ONE image) → [multi-panel.md](references/multi-panel.md). 9-cell TVC grids, 2x2 portrait grids, 3-panel campaign collages, 4x3 borderless grids, 6-frame cinematic sequences, before/after splits, 12-panel storyboard posters.
+- **Industry pattern libraries** — proven prompt templates by vertical. Load the matching file:
+  - E-commerce product shots → [patterns/ecommerce.md](references/patterns/ecommerce.md)
+  - Fashion editorial campaigns → [patterns/fashion-editorial.md](references/patterns/fashion-editorial.md)
+  - Food & beverage advertising → [patterns/food-beverage.md](references/patterns/food-beverage.md)
+  - Cinematic portraits → [patterns/portrait-cinema.md](references/patterns/portrait-cinema.md)
+  - Posters & illustration → [patterns/poster-illustration.md](references/patterns/poster-illustration.md)
+  - Character design (turnarounds, expression sheets, outfit grids) → [patterns/character-design.md](references/patterns/character-design.md)
+  - UI mockups & social media formats → [patterns/ui-social.md](references/patterns/ui-social.md)
 
 ### Step 5 — read for production language → [creative-direction.md](references/creative-direction.md)
 
@@ -62,7 +70,7 @@ Studio-quality vocabulary for lighting design, camera and hardware, color gradin
 
 ### Step 6 — read if structuring a complex prompt → [prompt-framework.md](references/prompt-framework.md)
 
-Universal element checklist (subject, context, action, environment, camera, lighting, mood, materials, palette, format), detail modes (concise / standard / verbose), output structure with parameters and exclusions.
+Universal element checklist (subject, context, action, environment, camera, lighting, mood, materials, palette, format), detail modes (concise / standard / verbose / cinematic verbose), parameterized templates, output structure with parameters and exclusions.
 
 ---
 

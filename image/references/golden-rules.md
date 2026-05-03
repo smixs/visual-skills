@@ -130,3 +130,65 @@ Match colors, textures, mood.
 [Attach Image 3 - background]
 Combine: face from Image 1, outfit style from Image 2, setting from Image 3.
 ```
+
+## World Knowledge Anchors
+
+GPT Image 2 обладает глубокими знаниями о культуре, эпохах и визуальных стилях. Вместо описания каждой детали — дай модели культурный/временной/жанровый якорь, и она сама заполнит аутентичные детали.
+
+### Три типа якорей
+
+**Era anchors** — временной и географический маркер, который вызывает целый визуальный мир:
+- "Bethel, NY, August 1969" → Woodstock aesthetic без необходимости описывать тай-дай, грязь, сцены
+- "Berlin, November 1989" → падение стены, толпы, граффити, эйфория
+- "Tokyo, 1982" → неоновый Shinjuku, аналоговая электроника, ранний cyberpunk
+
+**Cultural anchors** — перенос визуального языка одного культурного объекта на другой контекст:
+- "{game_title} in {real_city}" → автоматически применяет визуальный стиль игры к реальной локации (GTA style, Persona style, и т.д.)
+- "Soviet constructivism poster about {modern_topic}" → стиль Родченко/Эль Лисицкого на современную тему
+- "Ukiyo-e print of {modern_scene}" → японская гравюра с современным содержанием
+
+**Genre anchors** — режиссёр/фотограф/движение как линза:
+- "Peter Lindbergh influence" → сильный Ч/Б, минимальная ретушь, raw editorial
+- "Wes Anderson palette" → симметричный кадр, пастельная палитра, центрированная композиция
+- "Studio Ghibli mood" → мягкое акварельное небо, зелёная листва, тёплый ностальгический свет
+- "Roger Deakins lighting" → натуральный свет, глубокие тени, кинематографичный объём
+
+### Правила использования
+
+1. **Используй как HIGH-LEVEL steering** — якорь задаёт настроение и эстетику, а не заменяет весь промпт
+2. **Комбинируй с конкретными визуальными деталями** — якорь устанавливает мир, детали устанавливают специфику
+3. **Не стакай несколько genre anchors** — выбери один. "Peter Lindbergh + Wes Anderson" = каша
+4. **Era/cultural anchors работают лучше с GPT Image 2** (world knowledge). С Nano Banana результат менее предсказуем — NB больше опирается на явные описания
+
+### Примеры
+
+**Era anchor + конкретные детали:**
+```
+Create an editorial portrait set in Havana, 1957.
+
+Subject: jazz musician leaning against pastel-colored colonial building,
+holding trumpet loosely at his side. Linen suit, open collar.
+Lighting: harsh Caribbean afternoon sun, deep shadows under awning.
+Format: 3:4
+```
+> "Havana, 1957" вызывает: старые американские машины на заднем плане, облупившаяся штукатурка, кованые балконы, тропическая атмосфера — без необходимости это описывать.
+
+**Cultural anchor + новый контекст:**
+```
+Create a scene of a quiet Kyoto temple garden, rendered in the visual style
+of Studio Ghibli. Morning mist over moss-covered stones, a single monk
+sweeping fallen maple leaves. Soft watercolor textures, warm nostalgic palette.
+Format: 16:9
+```
+> "Studio Ghibli" задаёт акварельность, теплоту, ностальгию. Детали (мох, клён, монах) задают конкретную сцену.
+
+**Genre anchor + специфика:**
+```
+Create a fashion editorial portrait with Peter Lindbergh influence.
+
+Subject: model in oversized men's blazer, no makeup, wind-tousled hair.
+Setting: empty winter beach, overcast sky.
+Mood: raw, unpolished beauty
+Format: 2:3
+```
+> "Peter Lindbergh influence" даёт: мощный Ч/Б (или desaturated), отсутствие ретуши, raw emotional quality. Детали (пляж, блейзер, ветер) конкретизируют кадр.

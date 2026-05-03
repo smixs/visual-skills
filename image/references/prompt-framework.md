@@ -149,3 +149,102 @@ Text:
 Small icon: minimal dumbbell silhouette, bottom center
 Format: 9:16 (stories)
 ```
+
+## Parameterized Templates
+
+Паттерн `{variable}` для переиспользуемых промптов. Структура промпта остаётся стабильной — меняется только то, что нужно.
+
+### Синтаксис
+
+Переменные записываются как `{name, default="value"}`. Если значение не указано — используется дефолт. Если дефолта нет — переменная обязательна.
+
+### Шаблон
+
+```
+Scene: {location, default="small Lisbon florist storefront at blue hour"}
+Subject: {person, default="woman in navy apron"} {action, default="locking the front door"}
+Important Details: {lighting}, {lens_feel, default="50mm feel"}, {key_texture}
+Use Case: {use_case, default="editorial photography"}
+Constraints: {constraints, default="no extra signage, no people in background"}
+```
+
+### Как использовать
+
+1. **Заменяй только то, что меняется** — остальное берётся из дефолтов
+2. **Структура стабильна** — порядок слотов одинаковый для всех вариаций, модель получает консистентный формат
+3. **Batch-генерация** — идеально для серий: продуктовые ракурсы, позы персонажа, локации в одном стиле
+
+### Примеры использования
+
+**Серия продуктовых шотов** (меняется только товар и текстура):
+```
+Scene: {location, default="marble kitchen counter, morning light"}
+Subject: {product} on {surface, default="raw linen cloth"}
+Important Details: {lighting, default="soft window light from left"}, {lens_feel, default="85mm feel"}, {key_texture}
+Use Case: {use_case, default="e-commerce hero shot"}
+Constraints: {constraints, default="clean background, no props except surface"}
+```
+
+**Серия персонажных поз** (меняется действие и настроение):
+```
+Scene: {location, default="industrial loft studio"}
+Subject: {person, default="man in black turtleneck"} {action}
+Important Details: {lighting, default="single softbox, camera right"}, {lens_feel, default="50mm feel"}, {key_texture, default="fabric texture visible"}
+Use Case: {use_case, default="fashion editorial"}
+Constraints: {constraints, default="no visible logos, neutral expression"}
+```
+
+## Cinematic Verbose Mode
+
+Стандартный verbose — 5-7 строк. **Cinematic verbose** — уровень выше, для случаев когда нужен максимум детализации: hero shots, ключевые визуалы, campaign centerpieces.
+
+### Когда использовать
+
+- Финальный визуал кампании, а не итерация
+- Hero shot для лендинга или обложки
+- Key visual, который будет масштабироваться на все форматы
+- Портфолийная работа, где каждый пиксель имеет значение
+
+### Чеклист микро-деталей
+
+Добавляй поверх стандартного verbose — это дополнительные слои, а не замена:
+
+1. **Surface wear & aging** — "chipped paint on window frame, hairline scratches on metal surface, green patina on copper fittings, oxidation marks on iron hinges"
+2. **Micro-textures** — "visible pores on skin, individual hair strands catching backlight, fabric weave pattern on linen shirt, grain of weathered wood"
+3. **Atmospheric particles** — "dust motes suspended in light beam, steam wisps rising from coffee cup, pollen floating in golden hour air, fine rain droplets on glass surface"
+4. **Specular behavior** — "specular highlights on metal edges of watch, caustic reflections dancing inside glass bottle, wet surface sheen on cobblestones after rain"
+5. **Fabric & material drape** — "natural fabric folds at elbow crease, gravity pull on loose linen garment, weight distribution visible in heavy wool coat"
+6. **Contact shadows** — "soft contact shadow where cup meets saucer, ambient occlusion in crevices of stone wall, dark line where book spine meets table"
+7. **Environmental reflections** — "building reflections in wet pavement, sky gradient in chrome bumper surface, warm neon glow on skin from nearby sign"
+8. **Motion cues** — "slight motion blur on trailing hair strand, frozen splash droplet from espresso pour, wind-displaced fabric edge of scarf"
+
+### Before / After
+
+**Standard Verbose:**
+```
+Create a cinematic portrait for coffee brand campaign.
+
+Setting: Small Italian café, early morning. Espresso machine prominent in background.
+Subject: Barista in white shirt, mid-pour, focused expression.
+Atmosphere: Steam rising, warm tones, golden morning light through window.
+Mood: Craftsmanship, ritual, quiet dedication
+Lighting: Warm directional light from left window
+Format: 4:5
+```
+
+**Cinematic Verbose:**
+```
+Create a cinematic portrait for coffee brand campaign.
+
+Setting: Small Italian café, early morning. Brass-and-chrome La Marzocca espresso machine in background, oxidation marks on steam wand, hairline scratches on drip tray from years of use. Chipped paint on wooden window frame behind machine.
+
+Subject: Barista in white linen shirt — fabric weave pattern visible, natural folds at rolled-up sleeves, gravity pull on loose collar. Mid-pour with focused expression, visible pores on forehead, individual eyebrow hairs catching backlight.
+
+Atmosphere: Steam wisps rising from espresso cup, dust motes suspended in morning light beam cutting through window. Fine coffee grounds scattered on worn marble counter — soft contact shadow where cup meets saucer. Wet surface sheen on freshly wiped counter edge.
+
+Details: Specular highlights on chrome portafilter handle. Caustic reflections dancing inside glass water carafe on shelf. Warm neon glow of "APERTO" sign reflecting on barista's forearm. Slight motion blur on trailing steam, frozen droplet mid-drip from group head.
+
+Mood: Craftsmanship, ritual, quiet dedication
+Lighting: Warm directional light from left window, volumetric through steam
+Format: 4:5
+```
