@@ -1,4 +1,4 @@
-# 🎨 Visual Skills for Claude — Image & Video Prompting
+# 🎨 Visual Skills for Agents — Image & Video Prompting
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
