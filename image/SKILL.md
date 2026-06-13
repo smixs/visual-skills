@@ -8,6 +8,9 @@ description: >
   vision analysis, image-to-prompt, nb, NBP, NB2, gpt-image-2, multi-panel grids,
   ecommerce product photography, fashion editorial, food/beverage ads, cinematic portraits.
   Do NOT use for: video (use video skill), 3D models, audio, non-image tasks.
+version: 1.0.0
+license: MIT
+metadata.hermes.tags: []
 ---
 
 # Image Prompting — Nano Banana & GPT Image 2
