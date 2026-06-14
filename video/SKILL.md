@@ -1,7 +1,7 @@
 ---
-name: video
-description: Use this skill whenever the user asks to create, improve, audit, or split prompts for AI video generators (Seedance, Kling, Veo, Runway, Luma, Pika, Sora, any image-to-video system). The skill also covers storyboards, shot lists, director treatments, dynamic montage, multi-clip story structure, camera direction, lighting, blocking, pacing, character continuity, dialogue, and sound design. Trigger even when the user says things like "придумай сцену для видео", "разбей на склейки", "сделай раскадровку", "улучши промпт для Kling", "переведи сценарий в промпты", "как снять X в AI-видео", or shares a prompt and asks to fix it.
----
+name: "video"
+description: "Use when use this skill whenever the user asks to create, improve, audit, or split prompts for AI video generators (Seedance, Kling, Veo, Runway, Luma, Pika, Sora, any image-to-video system). The skill also covers storyboards, shot lists, director treatments, dynamic montage, multi-clip story structure, camera direction, lighting, blocking, pacing, character continuity, dialogue, and sound design. Trigger even when the user says things like \"\u043f\u0440\u0438\u0434\u0443\u043c\u0430\u0439 \u0441\u0446\u0435\u043d\u0443 \u0434\u043b\u044f \u0432\u0438\u0434\u0435\u043e\", \"\u0440\u0430\u0437\u0431\u0435\u0439 \u043d\u0430 \u0441\u043a\u043b\u0435\u0439\u043a\u0438\", \"\u0441\u0434\u0435\u043b\u0430\u0439 \u0440\u0430\u0441\u043a\u0430\u0434\u0440\u043e\u0432\u043a\u0443\", \"\u0443\u043b\u0443\u0447\u0448\u0438 \u043f\u0440\u043e\u043c\u043f\u0442 \u0434\u043b\u044f Kling\", \"\u043f\u0435\u0440\u0435\u0432\u0435\u0434\u0438 \u0441\u0446\u0435\u043d\u0430\u0440\u0438\u0439 \u0432 \u043f\u0440\u043e\u043c\u043f\u0442\u044b\", \"\u043a\u0430\u043a \u0441\u043d\u044f\u0442\u044c X \u0432 AI-\u0432\u0438\u0434\u0435\u043e\", or shares a prompt and asks to fix it."
+----
 
 # AI Director, Screenwriter & Editor
 

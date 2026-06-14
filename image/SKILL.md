@@ -1,14 +1,7 @@
 ---
-name: image
-description: >
-  Image prompting skill for Nano Banana (NBP/NB2) and GPT Image 2. Writes ready-to-use
-  prompts with model/quality/size recommendations. Use when: "нарисуй", "сгенерируй
-  картинку", "image prompt", "промпт для картинки", blog covers, slides, posters,
-  product shots, UI mockups, storyboards, character sheets, edit/colorize, style transfer,
-  vision analysis, image-to-prompt, nb, NBP, NB2, gpt-image-2, multi-panel grids,
-  ecommerce product photography, fashion editorial, food/beverage ads, cinematic portraits.
-  Do NOT use for: video (use video skill), 3D models, audio, non-image tasks.
----
+name: "image"
+description: "Use when image prompting skill for Nano Banana (NBP/NB2) and GPT Image 2. Writes ready-to-use prompts with model/quality/size recommendations. Use when: \"\u043d\u0430\u0440\u0438\u0441\u0443\u0439\", \"\u0441\u0433\u0435\u043d\u0435\u0440\u0438\u0440\u0443\u0439 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0443\", \"image prompt\", \"\u043f\u0440\u043e\u043c\u043f\u0442 \u0434\u043b\u044f \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438\", blog covers, slides, posters, product shots, UI mockups, storyboards, character sheets, edit/colorize, style transfer, vision analysis, image-to-prompt, nb, NBP, NB2, gpt-image-2, multi-panel grids, ecommerce product photography, fashion editorial, food/beverage ads, cinematic portraits. Do NOT use for: video (use video skill), 3D models, audio, non-image tasks."
+----
 
 # Image Prompting — Nano Banana & GPT Image 2
 
