@@ -1,5 +1,7 @@
 # 🎨 Visual Skills for Agents — Image & Video Prompting
 
+![Visual Skills — one toolkit for both images and video](assets/hero.webp)
+
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![image: Nano Banana + GPT Image 2](https://img.shields.io/badge/image-Nano_Banana_%2B_GPT_Image_2-ff69b4?style=flat-square)](#-image--what-it-does)
