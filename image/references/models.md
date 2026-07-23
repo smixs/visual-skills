@@ -9,7 +9,7 @@ Skill пишет промпты под две семьи моделей. Они 
 | Реальное место/объект (с грунтингом) | **Nano Banana** (NB2/NBP) |
 | Сложная сцена с физикой/композицией | **Nano Banana Pro** |
 | Длинные горизонтальные/вертикальные форматы (1:8, 8:1, 4:1) | **Nano Banana** (только NB поддерживает экстрим) |
-| Дешёвая массовая генерация | **Nano Banana 2** или **gpt-image-1-mini** |
+| Дешёвая массовая генерация | **Nano Banana 2 Lite** или **gpt-image-1-mini** |
 | Фотореализм с тонкой типографикой/UI | **GPT Image 2** |
 | Точное editing с preservation (try-on, swap, weather) | **GPT Image 2** (в editing у него лучшая identity-preservation) |
 | Маленький плотный текст в кадре | **GPT Image 2** (`quality: high`) |
@@ -57,6 +57,7 @@ Skill пишет промпты под две семьи моделей. Они 
 
 | Модель | Цена | Заметки |
 |--------|------|---------|
+| Nano Banana 2 Lite | ~$0.034/img | Только 1K, ~4 сек. Черновики и массовые батчи |
 | Nano Banana 2 (Flash) | ~$0.04/img | Default для большинства задач |
 | Nano Banana Pro | ~$0.15/img | Сложные сцены, до 14 рефов |
 | GPT Image 2 (`low`) | дёшево | Latency-sensitive, превью |

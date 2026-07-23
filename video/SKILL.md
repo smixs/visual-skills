@@ -33,8 +33,8 @@ Use this short selector. The full reasoning is in the chosen file.
 
 | Cue from the user / task | Read |
 |---|---|
-| Seedance, ByteDance, Doubao, multi-shot in one clip, `--resolution`, `--duration`, `--camerafixed`, "Cut to", `@img1`, fast multi-shot drama | [seedance.md](references/seedance.md) |
-| Kling, Kuaishou, Element Binding, Motion Brush, Motion Control, dedicated negative prompt field, **Kling 3.0 multi-shot with `[Character A: ...]` labels, native dialogue + lip-sync, 15s** | [kling.md](references/kling.md) |
+| Seedance, ByteDance, Doubao, multi-shot in one clip, `--resolution`, `--duration`, `--camerafixed`, "Cut to", `@img1`, fast multi-shot drama, **Seedance 2.5 30-second single-pass, reference kits, 3D blockout** | [seedance.md](references/seedance.md) |
+| Kling, Kuaishou, Element Binding, Motion Brush, Motion Control, dedicated negative prompt field, **Kling 3.0 multi-shot with `[Character A: ...]` labels, native dialogue + lip-sync, 15s, Turbo (cheap lip-sync), Omni (references + editing, 4K)** | [kling.md](references/kling.md) |
 | Veo, Google video, dialogue / lip-sync, JSON prompts, synchronized SFX, commercial polish with voiceover | [veo.md](references/veo.md) |
 
 Default if nothing in the request hints at a model:
@@ -42,6 +42,8 @@ Default if nothing in the request hints at a model:
 - Dialogue / commercial polish / synchronized SFX → Veo, or Kling 3.0 for multi-character dialogue scenes up to 15s.
 - Character consistency across many social clips → Kling 2.6 Pro (cheaper) or Kling 3.0 (with in-prompt `[Character A: ...]` labels).
 - 10-15s continuous narrative with audio → Kling 3.0.
+- 15-30s continuous single-generation arc, heavy reference kits (up to 50 assets) → Seedance 2.5.
+- Face-heavy drama on Seedance → route to 1.5 Pro or Kling/Veo (Seedance 2.0+ filters human faces aggressively).
 
 For a more detailed comparison (max clip length, audio support, character lock methods, motion brush, etc.), read the model file you picked. Do not load all three.
 

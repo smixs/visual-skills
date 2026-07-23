@@ -31,7 +31,9 @@ Kling models vary widely in how many distinct elements they can handle in a sing
 - **Kling 2.1 Pro.** 1080p at 30fps. Motion Brush. End frame control.
 - **Kling 2.5 Turbo Pro.** Maximum 3-4 distinct elements.
 - **Kling 2.6 Pro.** 5-7 elements. Motion Control. Element Binding for character consistency.
-- **Kling 3.0.** Multi-shot in one generation (up to 6 shots). Native audio with dialogue and lip-sync. 15s continuous output. Strongest character and scene consistency. Two tiers: v3/pro and v3/standard.
+- **Kling 3.0.** Multi-shot in one generation (up to 6 shots). Native audio with dialogue and lip-sync. 15s continuous output. Native 4K, up to 60 fps. Strongest character and scene consistency. Two tiers: v3/pro and v3/standard.
+- **Kling 3.0 Turbo** (June 2026). Speed/price tier: audio included in base cost, noticeably better lip-sync on talking heads, 3-15s, but capped at 1080p — no 4K.
+- **Kling 3.0 Omni** (June 2026). The reference-and-editing flagship (API alias `o3`): strongest input understanding, editing pipeline at 3-15s with 4K in/out, Elements 3.0 with voice binding (see section 7).
 
 If in doubt about the user's version, ask. The prompting protocol differs between 1.x – 2.x (sections 4-9) and 3.0 (section 3).
 
@@ -129,8 +131,11 @@ Use these terms directly — the model treats them as instructions, not flavor:
 
 - Framing: profile shot, three-quarter, macro insert, two-shot, OTS, POV, low angle, high angle, Dutch
 - Edits: shot-reverse-shot, match cut, smash cut, J-cut, L-cut
-- Camera moves: tracking, dolly, push-in, pull-out, whip pan, crane, handheld
+- Camera moves: tracking, dolly, push-in, pull-out, whip pan, crane, handheld, orbital / 360 spin, Steadicam, drone-like aerial. Composites work: "pan right while tilting up".
 - Lens feel: 35mm, 50mm, 85mm, 100mm macro, anamorphic 40mm
+- Tempo words the model obeys: "ultra-slow motion" (2-3s feel), "slow and deliberate" (5-8s), "moderate" (3-5s), "quick snap" (1-2s); exact timing works too ("5-second dolly zoom").
+- Angle carries emotion: low angle = dominance, high angle = vulnerability, eye-level = neutral. Pick per the power dynamic from `dramaturgy.md` §6, not at random.
+- In the Kling app, Master Shot presets ("Move Forward and Zoom Up" etc.) are more stable than hand-written camera prose and save credits — prefer them for standard moves, prose for motivated ones.
 
 ### Default model choice
 
@@ -141,7 +146,16 @@ If the task hits any of these — **use Kling 3.0 over earlier Kling**:
 - Multi-character with distinct voices
 - Image-to-video where text on the image must stay legible
 
+Within the 3.0 family: talking heads and dialogue on a budget → **Turbo** (best lip-sync per dollar, audio included, 1080p cap); reference-heavy or editing work, 4K delivery → **Omni**; everything else → base 3.0.
+
 For everything else (single clip, no dialogue, < 10s, character lock via reference images, Motion Brush) — older versions still work and are cheaper.
+
+### API parameters (3.0, fal/official)
+
+- `cfg_scale` 0-1, default 0.5. 0.3-0.4 = creative freedom, 0.7-1.0 = strict prompt adherence (product / explainer work).
+- `duration` — per-shot durations must sum to ≤ 15s.
+- `aspect_ratio` — 16:9 / 9:16 / 1:1.
+- `generate_audio` — bool. There is no "no music" toggle: the model lays music even against a negative prompt. If you need clean audio, generate with audio off or strip the track in post.
 
 ## 4. Prompt formula (1.x – 2.x)
 
@@ -211,6 +225,15 @@ Source image rules.
 
 For Kling 3.0 — Element Library still works, but the in-prompt `[Character A: ...]` labels (see section 3) are usually enough on their own.
 
+### Elements 3.0 (Omni)
+
+On 3.0 Omni the element system got deeper:
+
+- A character element takes either a **3-8s video** (the model extracts both appearance and voice) or up to **4 multi-angle stills** (front, three-quarter, profile, back), plus optional **voice binding** (5-30s audio clip). Once bound, the voice belongs to the subject — do not re-describe it in the prompt.
+- Define a character / product / location **once** as an element, then tag it in prose: `@Grace picks up the folder`. The prompt carries only action and camera; identity lives in the element.
+- Holds 3+ distinct characters in frame without feature blending — but only if **each** has its own element.
+- Cost of the feature: several practitioners report visible image-quality degradation the moment elements/references are enabled. Use elements only when consistency actually matters; for one-off clips, in-prompt labels are cleaner.
+
 ## 8. Motion Brush (unique)
 
 Animate up to 6 regions of a single image independently. Each region gets its own motion path.
@@ -272,6 +295,22 @@ Fix. Apply P2 — bind dialogue to a unique visual action ("Character A pulls a 
 ### Kling 3.0 picks the wrong voice
 
 Fix. Apply P3 — put voice tone inside the speaker tag: `[Character A, raspy deep voice]:`. Generic `[Man]:` / `[Woman]:` tags get a generic voice.
+
+### Image quality drops when Elements / references are enabled
+
+Fix. Strip references to the essential ones only; for one-off clips prefer in-prompt `[Character A: ...]` labels over elements. Accept the trade: elements buy consistency, not fidelity.
+
+### Two similar characters blend features in one frame
+
+Fix. Give each character its own element (or its own labeled identity block). Never let two speaking characters share one visual description.
+
+### Morphing artifacts on fast motion
+
+Fix. Generate the action in slow motion and speed it up in post — the model holds geometry at slower internal motion.
+
+### Music appears even though the prompt says "no music"
+
+Fix. Negative-prompting music is unreliable. Generate with `generate_audio` off and add sound in post, or strip the music track.
 
 ## 12. Skeleton
 

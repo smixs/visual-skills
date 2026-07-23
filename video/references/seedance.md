@@ -18,6 +18,7 @@
 14. Audio (1.5+)
 15. Failure modes and fixes
 16. Worked example. 15-second tragicomedy as 3 × 5s clips
+17. Seedance 2.5 — the 30-second single-pass clip
 
 ---
 
@@ -30,11 +31,14 @@ A ByteDance video model with the UNIQUE ability to generate several distinct sho
 - Seedance 1.0 Pro. 1080p, 5-10s (API up to 12s). Strong multi-shot.
 - Seedance 1.0 Lite. 720p, faster, cheaper.
 - Seedance 1.5 Pro. Native audio and lip-sync added.
-- Seedance 2.0. Improved motion, better audio, 9 camera movement presets, limited negative prompt support.
+- Seedance 2.0. Improved motion, better audio, 9 camera movement presets, limited negative prompt support, up to 12 reference inputs via `@` tags. Since June 2026: native 4K, 10-bit color. 2.0 Mini: ~2× faster, ~30% cheaper, for drafts and batches.
+- **Seedance 2.5** (API since July 2026). Native 30-second single-pass clip (no stitching), up to 50 multimodal reference inputs (images + video + audio + style guides), 3D white-box camera blockout, localized re-draw of part of the frame without touching motion/camera/light, 11 prompt languages. See section 17.
 
-Resolutions. 480p, 720p, 1080p.
+Resolutions. 480p, 720p, 1080p; 2.0/2.5 add native 4K.
 Aspect ratios. 16:9, 4:3, 1:1, 3:4, 9:16, 21:9, 9:21.
 Frame rate. 24-30 fps.
+
+**Model pick within the family:** people-centric drama with faces → 1.5 Pro (2.0/2.5 aggressively filter human faces and celebrity-adjacent content after the 2026 deepfake crackdown; for face-heavy work Kling or Veo are safer). Scenes, architecture, product, montage → 2.0. One continuous 15-30s arc or heavy reference kits → 2.5. Cheap drafts → 2.0 Mini, then re-render keepers high.
 
 ## 3. CLI parameters
 
@@ -187,7 +191,7 @@ Cut to. Macro insert. His hand reaches toward a single sausage on an empty shelf
 Cut to. Over-the-shoulder shot. The fridge light paints his face cold blue.
 ```
 
-Use 2-3 shots per 5-second clip for tight cinematic montage, 4-5 shot beats only when each beat is short and physically distinct (see section 7). Avoid 6+ shots per 5s. They compress into incoherent motion.
+Use 2-3 shots per 5-second clip for tight cinematic montage, 4-5 shot beats only when each beat is short and physically distinct (see section 7). Hard cap: 5 shots per generation — beyond that the model drops or compresses shots. Size the duration to the shot count (4 shots need 10-15s, not 5s). Every shot must share an anchor with its neighbors — same character, same location, or same lighting recipe — or the model produces disconnected clips instead of a sequence.
 
 ## 9. Anti-mush guard block
 
@@ -220,6 +224,7 @@ Rules.
 - The full identity block must follow the `@img1` mention. The model needs the textual description as a backup signal — the image alone drifts.
 - Repeat the identity block in **every** clip of a stitched sequence. Treat each generation as briefing a new intern.
 - For multiple references (character + setting, character + outfit), label each: `@img1` is the protagonist, `@img2` is the location reference, `@img3` is the outfit reference. Then state the role inline.
+- 2.0 also takes `@Video1` (motion/style reference, 480-720p) and `@Audio1` (voiceover / music) tags — state each reference's role in prose, e.g. "@Audio1 plays as the voiceover". Limits: 12 files total on 2.0 (up to 9 images, 3 videos, 3 audio); up to 50 on 2.5.
 
 ## 11. Camera movements (9 presets)
 
@@ -253,13 +258,18 @@ Good. "He slowly walks toward the fridge, opens it with hesitation, freezes when
 
 ## 14. Audio (1.5+)
 
-Seedance 1.5 Pro and 2.0 generate native audio and support lip-sync. Include audio cues in the body of the prompt.
+Seedance 1.5 Pro, 2.0 and 2.5 generate native audio and support lip-sync. Include audio cues in the body of the prompt — treat the prompt as a sound brief.
 
 ```text
 Audio. fridge hum, distant rain on window, one stomach growl at 2.3 sec, final silence.
 ```
 
-Dialogue is supported but less robust than Veo. Keep lines short.
+Rules:
+
+- Dialogue goes in **double quotes** — the model voices it, generates the voice and syncs lips to the cut. State the delivery: "Play her line dry and a little proud, his quiet and worn out."
+- Keep lines short. Long monologues drift out of sync — split into several lines and hold sync with cuts. Still less robust than Veo for speech-first work.
+- Write **"no music"** explicitly when you want none — otherwise the model lays an ad-style score under everything.
+- Subtitles: describe the voiceover, then ask for "text along the bottom edge, timed to the voice".
 
 ## 15. Failure modes and fixes
 
@@ -290,6 +300,10 @@ Fix. Each shot needs a distinct emotional function (Establish / Power / Pressure
 ### Lazy abstract phrasing produces lifeless clips
 
 Fix. Apply the Details Law (section 4). Audit your draft: every shot must have one environmental pressure, one micro-action, one sound or visual motif anchor. Replace adjectives like "dramatic", "intense", "beautiful" with concrete physical facts.
+
+### Human faces rejected or degraded (2.0 / 2.5)
+
+After the 2026 deepfake crackdown, 2.0+ aggressively filters human faces, helmets, sunglasses, and anything resembling protected IP or celebrity likeness. Fix. Route face-heavy drama to Seedance 1.5 Pro, Kling, or Veo; keep 2.0/2.5 for scenes, architecture, product and montage work. Use only owned or synthetic character references.
 
 ## 16. Worked example. 15-second tragicomedy as 3 × 5s clips
 
@@ -381,3 +395,41 @@ Continuity. [what must remain constant across shots].
 ```
 
 For dramatic, multi-shot, character-locked, or stitched-clip work — always use the 11-block production-grade skeleton from section 6.
+
+## 17. Seedance 2.5 — the 30-second single-pass clip
+
+2.5 changes the workflow: a 15-30s narrative that used to be 3-6 stitched clips can now be **one generation with one continuous arc**. The dramaturgy does not change — the beat map from `dramaturgy.md` §10 simply moves inside a single prompt.
+
+### Prompt = compact shot-list with beat timings
+
+Structure each beat as Subject → Action → Camera → Style, laid out on a timeline. Default 6-8 seconds per beat, 3-4 seconds for the resolution:
+
+```text
+00-06s  Hook.       <subject + action + camera + one environmental pressure>
+06-14s  Pressure.   <...>
+14-24s  Crack.      <...>
+24-30s  Resolution. <final image, held>
+```
+
+- Name both the shot size (**CU / MCU / WS**) and the move (**push-in, dolly left, orbit, handheld drift**) on every beat. "Cinematic" tells the model nothing.
+- Ask for transitions explicitly (match cut, whip pan) — do not hope. Foreshadowing works: an insert in the opening beat, returned in the last 3 seconds.
+- Physics: describe the **consequence** of an action, not just the action — the model renders real physics.
+
+### Character consistency across 30 seconds
+
+- Attach 2-3 portrait stills per hero and tag them (`@Image1`, `@Image2`).
+- Repeat wardrobe, props and time of day in every beat — this is what suppresses drift.
+- Write the eyeline logic (what the hero looks at) so the model keeps spatial continuity.
+- Independent long-form tests are still scarce: verify face and light consistency across all 30s yourself before promising it to a client.
+
+### 3D white-box blockout (previz inside the model)
+
+Reference-to-video accepts green-screen plates or rough 3D geometry to lock camera path, staging and blocking before spending render money. Use for complex blocking the same way you would previz a real shoot.
+
+### Localized re-draw
+
+2.5 can re-render part of the frame (product, background, one subject) without changing motion, camera or lighting — one master cut becomes SKU / locale / seasonal variants. Prompt the patch only; do not re-describe the untouched scene.
+
+### Workflow discipline
+
+Draft low, finish high: block at low resolution, re-render the keeper at 4K. The experimental long-video mode beyond 30s (up to ~180s) is unstable — treat 30s as the reliable ceiling.
