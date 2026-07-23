@@ -1,211 +1,85 @@
-# 🎨 Visual Skills for Agents — Image & Video Prompting
+# 🎬 Visual Skills — an AI Film Director for Your Agent
 
 ![Visual Skills — one toolkit for both images and video](assets/hero.webp)
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![image: Nano Banana + GPT Image 2](https://img.shields.io/badge/image-Nano_Banana_%2B_GPT_Image_2-ff69b4?style=flat-square)](#-image--what-it-does)
-[![video: Seedance + Kling + Veo](https://img.shields.io/badge/video-Seedance_%2B_Kling_%2B_Veo-orange?style=flat-square)](#-video--what-it-does)
 
 **🇷🇺 [Читать на русском](README.ru.md)**
 
-Two professional Claude Skills for AI visual content production. They write production-grade prompts for the leading image and video models — picking the right model for the task, applying its specific syntax, and returning a copy-paste-ready prompt.
+Two Claude Skills that turn your agent into a working film crew: `video` writes AI video prompts the way a director, screenwriter and editor would; `image` writes image prompts the way an art director would. Both pick the right model for the task, apply its exact syntax, and return a copy-paste-ready prompt.
 
-This is what a creative director, copywriter, or AI-content team uses instead of "be cinematic, 4k, masterpiece" filler.
+Most prompting guides teach you syntax. This one teaches your agent **cinema** — and that is what makes it the strongest tool available for directing AI video. A beautiful frame without dramaturgy is wallpaper. Models render pixels; the skill directs them.
 
----
+## Supported models
 
-## ✨ Supported Models
+**Video:** Seedance 1.0 / 1.5 Pro / 2.0 / 2.0 Mini / 2.5 · Kling 1.6 – 2.6 Pro, Kling 3.0 / 3.0 Turbo / 3.0 Omni · Veo 3 / 3.1. Runway Gen-4, Luma, Pika and Sora are covered by the universal rules layer.
 
-### 🖼️ Image generation models
+**Image:** Nano Banana 2 Lite / Nano Banana 2 / Nano Banana Pro (Gemini image family) · GPT Image 2 (plus legacy 1.5 / 1 / mini).
 
-| Model | Family | Best for | Notes |
-|---|---|---|---|
-| **Nano Banana 2** (Flash) | Google Gemini 3 Flash Image | Default workhorse, fast & cheap | ~$0.04/image |
-| **Nano Banana Pro** | Google Gemini 3 Pro Image | Complex multi-layered scenes, up to 14 reference images, image grounding (real places/species) | ~$0.15/image |
-| **GPT Image 2** | OpenAI | Brand assets, dense text, UI mockups, edits with hard preservation, up to 16 references | `quality: low / medium / high` |
-| GPT Image 1.5 / 1 | OpenAI legacy | Migration path only | — |
-| GPT Image 1-mini | OpenAI | Cheap exploratory batches | — |
+Model files are updated as new versions ship — Seedance 2.5 (30-second single-pass clips, 50 reference inputs, 3D camera blockout), Kling 3.0 Turbo and Omni, and Nano Banana 2 Lite are already in.
 
-### 🎬 Video generation models
+## Dramaturgy first, syntax second
 
-| Model | Family | Best for | Notes |
-|---|---|---|---|
-| **Seedance 1.0 / 1.5 / 2.0 Pro** | ByteDance | Multi-shot in one clip, fast montage drama, 1080p, up to 12s | `--resolution / --duration / --camerafixed`, `@img1` character lock |
-| **Seedance Lite** | ByteDance | Cheaper batch generation, 720p | — |
-| **Kling 1.6 / 2.1 / 2.5 Turbo / 2.6 Pro** | Kuaishou | Character consistency via Element Binding, Motion Brush, Motion Transfer, social verticals | Dedicated negative prompt field |
-| **Kling 3.0** (pro / standard) | Kuaishou | Native multi-shot up to 6 shots in one generation, native dialogue + lip-sync, voice tone control, 15s continuous output, in-prompt `[Character A: ...]` labeling | — |
-| **Veo 3 / Veo (flagship)** | Google | Native dialogue + lip-sync, synchronized SFX, JSON prompts, commercial polish | Up to 8s |
-| Runway Gen-4, Luma Dream Machine, Pika 2, Sora | misc | Generic guidance via universal rules | No dedicated reference yet |
+The heart of the `video` skill is `references/dramaturgy.md` — a working distillation of how great films are actually built, adapted for 5-30 second AI clips:
 
----
+- **The scene formula.** A scene exists only when five elements are present: the hero's desire, the obstacle, the geometry of the space, the controlled gaze, and the editing rhythm. Anything less is decoration.
+- **The Details Law.** Every shot must own three physical details: one environmental pressure (cold refrigerator light, wet asphalt), one micro-action of the body (jaw locks, knuckles whiten), one sound anchor or visual motif. Emotions named without a body do not render.
+- **Walter Murch's Rule of Six.** Where to cut, in priority order: emotion 51%, story 23%, rhythm 10%, eye-trace 7%, screen plane 5%, 3D space 4%. Cutting "for pace" alone is item three — serving it before emotion and story is how TikTok mush gets made.
+- **The three-jobs rule.** Every shot either changes emotion, advances action, or increases pressure. A shot that does none gets deleted, however pretty.
+- **Blocking and staging.** Fincher's motivated camera (every move answers "what changed?"), Spielberg's spatial clarity (even in chaos the viewer knows where the hero, the threat and the exit are), Kurosawa's environment-as-character (one weather, one pressure, carrying the emotion of the scene).
+- **Montage as rhythm.** The rhythm ladder — long, shorter, shorter, pause, impact. The pause before the hit matters more than the speed of the cuts. Beat maps for 15 / 30 / 60 / 90 seconds with Hook, Pressure, Crack, Impact and Aftermath.
+- **The 14-field shot card and the five anchors.** Every storyboard row carries framing, camera, movement reason, eye-trace, cut type, sound and light; every piece commits to one emotion, one motif, one object, one break, one final image.
 
-## 🤝 Compatible With
+Banned everywhere: "cinematic", "epic", "stunning", "masterpiece", "beautiful lighting". Each of those words is a placeholder for a detail the writer failed to invent — and none of them render.
 
-These are plain Claude Skills — markdown files plus a packaged `.skill` archive. They work in any agent or IDE that supports the Claude Skill format:
+## How the video skill works
 
-| Tool | How |
-|---|---|
-| **Claude Code** | Drop `image/` or `video/` into `~/.claude/skills/` (or run `claude install image.skill`) |
-| **Claude.ai Projects** | Upload the source folder to your project's knowledge base |
-| **Claude Agent SDK** | Reference the skill folder in your agent definition |
-| **Cursor / Windsurf** | Copy the source folder into your project rules |
-| **Cline / Roo Code** | Same — drop the folder into the agent's context |
-| **OpenCode / opencode-ai** | Add as a skill in the agent config |
-| **Hermes-agent** | Load via the agent's skill loader |
-| Any LLM agent with structured prompt support | Works — content is plain markdown, no platform lock-in |
+The `SKILL.md` body is a thin router; the craft lives in reference files the agent is forced to load in order:
 
-The skills work with Claude Opus, Sonnet, Haiku, and degrade gracefully on GPT / Gemini / open-weights agents (the markdown is model-agnostic).
+1. **Dramaturgy** (`dramaturgy.md`) — scene formula, beats, shot functions, rhythm.
+2. **Universal rules** (`universal-rules.md`) — the 12 rules that hold for every model: prompt skeleton, character anchors, show-don't-tell, duration discipline, the final-image rule.
+3. **One model file** — `seedance.md`, `kling.md` or `veo.md`: exact syntax, multi-shot markers, dialogue protocols, reference tags, failure modes with fixes.
+4. **Task modules when needed** — storyboards and role modes, animatic keyframes, race-and-speed grammar, genre patterns, prompt-fix skeletons, camera and lighting vocabulary.
+5. **Two mandatory checks before output** — the six-point dramaturgy check and the three-detail audit on every shot. A prompt that fails either does not ship.
 
----
+Output formats: a single prompt, a stitched multi-clip sequence with continuity blocks, a storyboard table, a prompt audit ("what breaks, what's missing, stronger version"), a director treatment, or Veo JSON.
 
-## 📦 What's in the Repo
+## What the image skill does
 
-```
-visual-skills/
-├── image/              # Source folder for the image-prompting skill
-├── image.skill         # Packaged skill — drop-in installer
-├── video/              # Source folder for the video-prompting skill
-├── video.skill         # Packaged skill — drop-in installer
-├── README.md / README.ru.md
-└── LICENSE             # MIT
-```
+Art direction for still images: editorial and product photography, posters, UI mockups, infographics, edits with hard preservation, character continuity across a series, storyboards and animatic keyframes for the video pipeline. It picks between Nano Banana and GPT Image 2 per task (grounding of real places, extreme aspect ratios and cheap batches go to Nano Banana; dense text, brand assets and preservation-critical edits go to GPT Image 2), then writes the prompt in that model's native structure.
 
----
+The two skills chain: `image` builds the character sheets and keyframes, `video` turns them into motion with a proper motion brief instead of a re-described scene.
 
-## 🖼️ `image` — What It Does
+## Install
 
-Writes prompts for AI image generation. Picks Nano Banana or GPT Image 2 based on the task, applies the model's specific syntax, returns a copy-paste-ready prompt with a header (model, quality, size).
-
-**Tasks covered:**
-
-- 📰 Editorial photography, posters, ad creatives
-- 🛍️ Product shots, packaging, mockups
-- 🖥️ UI mockups and product screenshots
-- 📊 Infographics, diagrams, slides
-- ✏️ Edits — try-on, lighting/weather swap, object removal, restoration, localization
-- 👤 Character continuity across multiple images
-- 🎞️ Storyboards, comics, sequential narrative
-- 📐 Sketch-to-photo, wireframes, 2D-to-3D, floor plans
-
-**Model split:**
-
-| Decision cue | Use |
-|---|---|
-| Real place / species (image grounding) | Nano Banana |
-| Extreme aspect ratios (1:8, 8:1, 4:1) | Nano Banana |
-| Edit with hard preservation (try-on, swap) | GPT Image 2 |
-| Small dense text, multi-font, brand assets | GPT Image 2 (`quality: high`) |
-| UI mockup, product screenshot | GPT Image 2 |
-| Default fast/cheap | Nano Banana 2 |
-
-**Reference files inside `image/`:** `models.md`, `nano-banana.md`, `gpt-image.md`, `golden-rules.md`, `prompt-framework.md`, `creative-direction.md`, `text-rendering.md`, `editing.md`, `characters.md`, `slides.md`, `storyboards.md`, `structural.md`, `dimensional.md`.
-
----
-
-## 🎬 `video` — What It Does
-
-Writes prompts for AI video generation. Operates as a hybrid Director / Screenwriter / Editor — applies cinematic dramaturgy (scene formula, Murch Rule of Six, blocking, staging) and the model-specific syntax (Seedance multi-shot, Kling Element Binding, Veo JSON / dialogue).
-
-**Tasks covered:**
-
-- 🎯 Single 5-second clips and stitched multi-clip stories (15s / 30s / 60s+)
-- 🎞️ Director treatments and shot lists (14-field shot card)
-- 📋 Storyboards from script
-- 🔧 Prompt audits ("here's my prompt, fix it")
-- 📝 Translating scripts and storylines into shot-by-shot prompts
-- 🔗 Continuity across clips (character lock, wardrobe, lighting logic)
-- 🎭 Genre patterns: commercial, music video, drama, action, fashion, UGC, product film
-
-**Model split:**
-
-| Decision cue | Use |
-|---|---|
-| Multi-shot in one clip, fast montage drama, "Cut to" syntax, no audio needed | Seedance |
-| Multi-shot **with dialogue + lip-sync**, up to 15s, multi-character voice control | **Kling 3.0** |
-| Character consistency across many social clips (no dialogue), Motion Brush, cheaper | Kling 2.6 Pro |
-| Dialogue, lip-sync, synchronized SFX, polished voiceover commercial, JSON prompts | Veo |
-
-**Reference files inside `video/`:** `dramaturgy.md`, `universal-rules.md`, `seedance.md`, `kling.md`, `veo.md`, `role-modes.md`, `patterns-and-genres.md`, `camera-lighting-vocabulary.md`, `fixes-and-skeletons.md`.
-
----
-
-## 🚀 Installation
-
-### Option A — Install the packaged `.skill`
-
-Download `image.skill` and/or `video.skill` from this repo and load through your Claude client:
-
-```bash
-# Claude Code
-claude install image.skill
-claude install video.skill
-```
-
-### Option B — Clone the source
+Works in Claude Code, Claude.ai Projects, Cursor, Windsurf, Cline, OpenCode, Hermes — anything that reads the Claude Skill format (plain markdown, no lock-in).
 
 ```bash
 git clone https://github.com/smixs/visual-skills.git
+cp -r visual-skills/video visual-skills/image ~/.claude/skills/
 ```
 
-Then copy the `image/` and/or `video/` folders into your skills directory:
+Or install the packaged archives: `claude install video.skill` / `claude install image.skill`.
 
-```bash
-# Claude Code
-cp -r visual-skills/image  ~/.claude/skills/
-cp -r visual-skills/video  ~/.claude/skills/
+## Usage
 
-# Cursor / Windsurf — copy into your project's rules folder
-cp -r visual-skills/image  .cursor/rules/
-```
-
----
-
-## 💡 Usage Examples
-
-**Image — quick prompts:**
-> "Сделай промпт для постера офисной кружки с надписью BEST DAY EVER, фон #f5f5dc, 16:9"
->
-> "Edit this product shot — change the background to plain white, keep the bottle exactly as is"
-
-**Image — model-aware:**
-> "Use GPT Image 2 to mock up a Spotify-like UI for a meditation app, quality high"
->
-> "Use Nano Banana Pro — cinematic photograph of the Charles Bridge in Prague at golden hour, must be architecturally accurate"
-
-**Video — single prompt:**
 > "Напиши промпт для Seedance — голодный мужик ночью находит последнюю сосиску в холодильнике, 5 секунд, мульти-шот"
 
-**Video — full breakdown:**
 > "Раскадруй 30-секундный ролик про чувство вины. Главная эмоция — guilt. Опорный объект — телефон с непрочитанным сообщением."
->
+
 > "Audit this prompt: [...]. What's broken, how to fix?"
->
+
 > "Translate this script into 6 × 5-second Seedance prompts."
 
----
+> "Make a keyframe set for a 15-second product film, then Kling prompts to animate each"
 
-## How It Works (short)
+## Credits
 
-Each `SKILL.md` is a thin router. The body says "before producing any prompt, load these reference files in this exact order". The actual rules — model-specific syntax, dramaturgy, the Details Law, banned phrases that hurt the model — live only in `references/`. This forces the agent into the references and prevents lazy generic output.
-
-For video specifically, every shot must own three concrete details: environmental pressure (cold refrigerator light, wet asphalt, flickering fluorescent), physical micro-action (jaw locks, knuckles whiten), and a sound or visual motif. Words like "cinematic", "epic", "stunning", "masterpiece" are banned — they don't render.
-
----
-
-## Credits & Sources
-
-- **Nano Banana** — Google Gemini 3 Pro Image / Flash Image, prompting via fal.ai and Google AI Studio guides.
-- **GPT Image 2** — OpenAI, via OpenAI's developers cookbook and fal.ai's GPT Image 2 prompting guide.
-- **Seedance** — ByteDance Seed, official Seedance 2.0 docs.
-- **Kling** — Kuaishou, official Kling docs.
-- **Veo** — Google DeepMind, official Veo docs.
-- **Video dramaturgy** — Walter Murch (*In the Blink of an Eye*, Rule of Six), Akira Kurosawa (environment as character), David Fincher (motivated camera), Steven Spielberg (spatial clarity), Jonathan Glazer (one-sentence music video), Bong Joon Ho (storyboarding after locations).
+Dramaturgy distilled from Walter Murch (*In the Blink of an Eye*), Akira Kurosawa, David Fincher, Steven Spielberg, Jonathan Glazer and Bong Joon Ho. Model syntax verified against official ByteDance, Kuaishou, Google and OpenAI docs plus fal.ai prompting guides, July 2026.
 
 ## License
 
-MIT — fork it, adapt it, ship better visual content.
+MIT — fork it, adapt it, ship better films.
 
----
-
-**Tags:** `claude` · `claude-skills` · `claude-code` · `claude-agent-sdk` · `prompt-engineering` · `ai-image-generation` · `ai-video-generation` · `nano-banana` · `gpt-image` · `gpt-image-2` · `seedance` · `kling` · `veo` · `creative-director` · `cursor` · `windsurf` · `cline` · `opencode` · `hermes-agent`
+**Tags:** `claude` · `claude-skills` · `ai-video-generation` · `ai-image-generation` · `seedance` · `kling` · `veo` · `nano-banana` · `gpt-image-2` · `ai-film-directing` · `storyboard` · `prompt-engineering`
