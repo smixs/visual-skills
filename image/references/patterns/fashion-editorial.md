@@ -111,3 +111,7 @@ Constraints: blobs must look physically present (not composited), no text, no lo
 ```
 A futuristic sportswear editorial photograph in a {studio_environment} studio space with a matte {floor_color} floor extending to infinity. {model_description} stands in an athletic {pose_detail}, wearing {techwear_outfit} with {fabric_detail}. Three to five large organic 3D blob shapes in {blob_color} with glossy smooth surfaces float at varying heights around the subject — the largest is armchair-sized, the smallest basketball-sized. Each blob has amoebic curves and casts soft colored shadows onto the floor and the model's clothes. Cool directional light from camera-right defines contour and fabric texture. One blob sits partially behind the model, one in front, creating depth. The model is the clear focal point. No text, no logos. Format: 4:5.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

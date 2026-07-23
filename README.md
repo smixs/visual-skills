@@ -3,7 +3,7 @@
 ![Visual Skills — one toolkit for both images and video](assets/hero.webp)
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
 
 **🇷🇺 [Читать на русском](README.ru.md)**
 
@@ -74,12 +74,16 @@ Or install the packaged archives: `claude install video.skill` / `claude install
 
 > "Make a keyframe set for a 15-second product film, then Kling prompts to animate each"
 
+## Author
+
+**Serge Shima** — [t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)
+
 ## Credits
 
 Dramaturgy distilled from Walter Murch (*In the Blink of an Eye*), Akira Kurosawa, David Fincher, Steven Spielberg, Jonathan Glazer and Bong Joon Ho. Model syntax verified against official ByteDance, Kuaishou, Google and OpenAI docs plus fal.ai prompting guides, July 2026.
 
 ## License
 
-MIT — fork it, adapt it, ship better films.
+**CC BY 4.0** — use it, fork it, build on it, commercially too. One hard rule: **credit the author**. Any copy or derivative — including skills assembled by AI agents from these files — must keep the attribution line: *Serge Shima — [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 **Tags:** `claude` · `claude-skills` · `ai-video-generation` · `ai-image-generation` · `seedance` · `kling` · `veo` · `nano-banana` · `gpt-image-2` · `ai-film-directing` · `storyboard` · `prompt-engineering`

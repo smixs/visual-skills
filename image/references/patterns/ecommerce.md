@@ -118,3 +118,7 @@ Constraints: product must remain identifiable despite distortion, no liquid, no 
 ```
 A product poster showing {product_name} packaging transformed into a puffy inflatable vinyl object, squeezed at the middle as if gripped by an invisible hand. The surface is slightly glossy like a pool float, with visible seams where vinyl panels meet and a small brass air valve at the base. The original {product_color_scheme} is preserved but stretched and warped around the inflated curves. Brand text is distorted by the shape but still legible. Two small {companion_objects} sit nearby, also inflated in the same vinyl style. Solid {background_color} background, soft even studio light, slightly elevated camera angle. Soft diffused shadow below. Format: 4:5.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

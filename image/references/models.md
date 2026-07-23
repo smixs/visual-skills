@@ -66,3 +66,7 @@ Skill пишет промпты под две семьи моделей. Они 
 | gpt-image-1-mini | дешёвый | Высокообъёмная exploratory-генерация |
 
 > Скилл сам не запускает генерацию — выдаёт промпт. Модель/quality указываем рядом с промптом как мета.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

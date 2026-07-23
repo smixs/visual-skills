@@ -317,3 +317,7 @@ Quality: high
 - Text/labels in panels --> GPT Image 2 `quality: high`
 - No text, complex composition --> Nano Banana Pro
 - Budget/exploration --> Nano Banana 2 or GPT Image 2 `quality: low`
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

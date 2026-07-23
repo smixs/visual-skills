@@ -121,3 +121,7 @@ A symmetrical ornamental art print centered on a {peacock_variant} peacock in fu
 ```
 A symmetrical ornamental art print centered on a {peacock_variant} peacock in full tail display, viewed {view_angle}. Tail feathers fan into a perfect semicircle filling the upper two-thirds, each eye-spot rendered with iridescent {eye_colors} and fine barb texture. The peacock stands on a {base_element}. Flanking it symmetrically: {botanical_left} on the left mirrored by {botanical_right} on the right, stems and blossoms curving inward to frame the bird. {additional_fauna} near the upper corners. Background: {background_texture} in {background_color}. Style: {print_style} with visible {technique_marks} and slightly flattened color as from layered printing passes. Border: {border_style}. Palette: {palette}. Format: 3:4.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

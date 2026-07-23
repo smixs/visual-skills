@@ -228,3 +228,7 @@ Run before every panel ships. Drop the panel if it fails.
 - [ ] **Earns its density slot** — a held beat gets one panel, a bang gets a burst; the board reads as an accelerating tachometer on mute (§3).
 
 If a panel survives all ten, it is an *opornyi kadr*, not wallpaper. Hand it to `seedance.md` / `kling.md` / `veo.md` as the locked first frame.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

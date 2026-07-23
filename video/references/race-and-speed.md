@@ -231,3 +231,7 @@ The race-specific list of panels that kill credibility — do not draw. (The gen
 - [ ] No banned panel: static fetish insert (lever/badge/wheel with no verb, no state-change); anatomy at rest; a detail you cannot caption with a §4 label; all-proof-of-speed board with no commitment/mistake/recovery; decorative dashboard clutter (keyring, dice, coffee cup — "each object is a clue"); warm wash without narrative function.
 
 Before sending the board, run `animatic-keyframes.md` §9 (per-panel master checklist), `dramaturgy.md` §15 and `universal-rules.md` §13 over it. The most-violated step is the three-detail check — do not skip it.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

@@ -144,3 +144,7 @@ Constraints: unified anime art style across all sections — portrait and full b
 ```
 An anime-style character reference card for {character_name} on a white background. Left side: full-body standing pose, front-facing, clean cel-shaded anime rendering — {character_description}. Upper right: portrait bust at three-quarter angle showing {face_details}. Mid-right: key items laid out in a row — {item_1}, {item_2}, {item_3} — each drawn consistently and labeled. Lower right: horizontal color palette strip with {num_swatches} rectangular swatches ({swatch_colors}). Clean layout with thin gray separator lines between sections. Professional concept art quality, consistent line weight throughout. Format: 3:4.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

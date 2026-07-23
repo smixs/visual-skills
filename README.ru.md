@@ -3,7 +3,7 @@
 ![Visual Skills - один инструмент и для картинок, и для видео](assets/hero.webp)
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
 
 **🇬🇧 [Read in English](README.md)**
 
@@ -74,12 +74,16 @@ cp -r visual-skills/video visual-skills/image ~/.claude/skills/
 
 > «Собери кейфреймы для 15-секундного продуктового ролика, потом промпты Kling на оживление каждого»
 
+## Автор
+
+**Сергей Шима** - [t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)
+
 ## Источники
 
 Драматургия дистиллирована из Уолтера Мёрча («In the Blink of an Eye»), Акиры Куросавы, Дэвида Финчера, Стивена Спилберга, Джонатана Глейзера и Пон Джун-хо. Синтаксис моделей сверен с официальной документацией ByteDance, Kuaishou, Google и OpenAI и промпт-гайдами fal.ai, июль 2026.
 
 ## Лицензия
 
-MIT - форкайте, адаптируйте, снимайте лучше.
+**CC BY 4.0** - используйте, форкайте, стройте своё, в том числе коммерчески. Одно жёсткое правило: **указывайте автора**. Любая копия или производная, включая скиллы, собранные AI-агентами из этих файлов, обязана сохранить строку атрибуции: *Serge Shima - [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. Подробности в [LICENSE](LICENSE) и [NOTICE](NOTICE).
 
 **Теги:** `claude` · `claude-skills` · `ai-video-generation` · `ai-image-generation` · `seedance` · `kling` · `veo` · `nano-banana` · `gpt-image-2` · `ai-film-directing` · `storyboard` · `prompt-engineering`

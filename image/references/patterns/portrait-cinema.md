@@ -101,3 +101,7 @@ Constraints: subject's face must be clearly visible and serene (not distressed o
 ```
 A surreal underwater portrait of {person_description} floating in a relaxed {pose_description} in clear {water_color} water. Eyes {eye_state}, hair fans out weightlessly in all directions. {clothing_description} billows and suspends in the current, folds drifting independently. {fish_count} translucent {fish_type} swim in a loose school around the subject — each semi-transparent with visible skeletal structure and iridescent scales catching caustic light from above. Sunlight penetrates from the surface in {light_pattern}, casting rippling patterns across skin and fabric. Fine air bubbles rise from the subject's {bubble_source}. Skin has a subtle cool {water_tint} cast. No pool walls, no surface edge visible — infinite aquatic void. Serene and dreamlike. Palette: {palette}. Format: 4:5.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

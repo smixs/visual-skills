@@ -153,3 +153,7 @@ A full scene usually moves. Establish -> Power -> Pressure -> Detail -> Reaction
 A montage sequence can compress or loop. Use function tags to keep the structure readable even at high speed.
 
 Each tag is also a question the shot must answer. Establish. Where. Power. Who commands. Pressure. What pushes. Detail. What to notice. Reaction. What it cost. Shift. What changed inside. Impact. The moment. Aftermath. The residue. Exit. The image carried out.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

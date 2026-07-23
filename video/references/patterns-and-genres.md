@@ -188,3 +188,7 @@ Use timecoded structure for Seedance and Veo. Kling prefers flowing prose.
 When moving from clip N to clip N+1, the first beat of the new clip should match the final beat of the previous clip. Character in same pose. Same light. Same color temperature. This is what makes them cut together cleanly in the editor.
 
 Example. Clip 1 ends on him reaching into the fridge. Clip 2 opens on his hand inside the fridge at the same height and light.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

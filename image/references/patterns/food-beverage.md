@@ -128,3 +128,7 @@ A hand-drawn illustrated bird's-eye map of {city_name} showing its food culture.
 ```
 A hand-drawn illustrated bird's-eye food map of {city_name}, covering the {area_description}. Simplified but recognizable {landmark_list} are drawn in loose ink-and-watercolor style. {dish_count} local dishes ({dish_list}) float at exaggerated scale near their neighborhoods, each painted in warm appetizing watercolor with visible brushstrokes. Streets are thin freehand ink lines. Water features in soft {water_color} wash. A hand-lettered banner at top reads "{MAP_TITLE}". Small hand-written labels mark dishes and neighborhoods. Style mixes vintage travel poster illustration with editorial food drawing. Palette: {palette_description}. Format: {aspect_ratio}.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

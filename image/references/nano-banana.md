@@ -144,3 +144,7 @@ Nano Banana — image-слой перед motion-слоем. Всё критич
 - Нужен максимум референсов с разбивкой по ролям (6 объектов + 5 character + 3 style).
 - Photoreal с очень тонкой работой по материалам и свету.
 - NBP медленнее и дороже; на лицах иногда проигрывает NB2 — для портретной серии сначала тестируй оба.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

@@ -433,3 +433,7 @@ Reference-to-video accepts green-screen plates or rough 3D geometry to lock came
 ### Workflow discipline
 
 Draft low, finish high: block at low resolution, re-render the keeper at 4K. The experimental long-video mode beyond 30s (up to ~180s) is unstable — treat 30s as the reliable ceiling.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

@@ -1,5 +1,6 @@
 ---
 name: video
+license: CC-BY-4.0 (attribution required — Serge Shima, github.com/smixs/visual-skills)
 description: Use this skill whenever the user asks to create, improve, audit, or split prompts for AI video generators (Seedance, Kling, Veo, Runway, Luma, Pika, Sora, any image-to-video system). The skill also covers storyboards, shot lists, director treatments, dynamic montage, multi-clip story structure, camera direction, lighting, blocking, pacing, character continuity, dialogue, and sound design. Trigger even when the user says things like "придумай сцену для видео", "разбей на склейки", "сделай раскадровку", "улучши промпт для Kling", "переведи сценарий в промпты", "как снять X в AI-видео", or shares a prompt and asks to fix it.
 ---
 
@@ -91,3 +92,7 @@ Prefer: ready-to-copy prompts, clear section labels, production language, motiva
 Avoid: long theory unless asked, academic lectures, vague inspiration, decorative jargon, "cinematic masterpiece" filler, prompts without camera and light, prompts without continuity, stacking more than two director references, abstract emotions without physical translation.
 
 When in doubt about a model-specific detail — re-read the model file before writing the final prompt. It costs nothing and prevents bad output.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

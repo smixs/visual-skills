@@ -192,3 +192,7 @@ Mood: raw, unpolished beauty
 Format: 2:3
 ```
 > "Peter Lindbergh influence" даёт: мощный Ч/Б (или desaturated), отсутствие ретуши, raw emotional quality. Детали (пляж, блейзер, ветер) конкретизируют кадр.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

@@ -107,3 +107,7 @@ Load `vision-decomposer.md` whenever:
 - Mood-board work: extracting cinematic DNA from a film still, ad frame, painting, photo
 
 Do NOT load this for: pure generation requests where no reference image is given. For those, use the standard model files.
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

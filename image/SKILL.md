@@ -1,5 +1,6 @@
 ---
 name: image
+license: CC-BY-4.0 (attribution required — Serge Shima, github.com/smixs/visual-skills)
 description: >
   Image prompting skill for Nano Banana (NBP/NB2) and GPT Image 2. Writes ready-to-use
   prompts with model/quality/size recommendations. Use when: "нарисуй", "сгенерируй
@@ -105,3 +106,7 @@ Constraints: <no extra objects, no drift, ...>
 Prefer: ready-to-copy prompts, hex colors, concrete materials, named compositions, model-specific syntax (5-slot for GPT Image, natural prose for Nano Banana).
 
 Avoid: tag soup ("cool, modern, 4k"), vague praise ("stunning, epic, masterpiece" — actively hurts GPT Image 2), negative framing ("no people, no cars" — invert to positive), external comparisons ("like Apple ad" — describe the visual properties instead), numerical lens parameters in Nano Banana prompts (it ignores them).
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*

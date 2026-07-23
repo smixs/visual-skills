@@ -139,3 +139,7 @@ Constraints: same person in all panels showing the subject, swatches must be sol
 ```
 A personal color analysis board on a white background for {subject_description}. Top section: portrait of the subject on the left, seasonal classification "{season_type}" on the right with a grid of {num_palette} color palette swatches ({palette_colors}). Middle section: side-by-side comparison — left shows the subject in a {flattering_color} top looking healthy and bright ("{good_label}"), right shows the same subject in {unflattering_color} looking washed out ("{bad_label}"). Bottom strip: {num_recs} recommended items ({rec_items}) each in a palette color with one-word labels. Clean editorial layout, visual-first with minimal text, thin gray dividers between sections. Format: 3:4.
 ```
+
+---
+
+*Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*
