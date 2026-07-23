@@ -48,6 +48,8 @@ For a more detailed comparison (max clip length, audio support, character lock m
 ### Step 4 — task-shaped reading (load only those that match)
 
 - Storyboard / shot list / director treatment / "разбей на склейки" → [role-modes.md](references/role-modes.md). Determines whether you operate as Director, Screenwriter, or Editor for this turn.
+- Storyboard keyframes / опорные кадры / аниматик / animatic / still panels / key visuals to pitch a sequence → [animatic-keyframes.md](references/animatic-keyframes.md). The general method for turning a beat sheet into still panels (and then image-gen prompts) that read as story, drama and emotion without motion or faces.
+- Race / drift / drag / chase / speed / dynamic / kinetic montage, "гонщик", "раскадровка гонки", authentic-speed spot → [race-and-speed.md](references/race-and-speed.md). Specializes `animatic-keyframes.md` for the race domain — read that file first.
 - Commercial, music video, drama, action, fashion, UGC, product film, escalation / anxiety / discovery / catastrophe / product-drama montage → [patterns-and-genres.md](references/patterns-and-genres.md).
 - Multi-clip continuity, fixing a broken prompt, known failure modes (one-take, face drift, melted hands, dialogue too fast) → [fixes-and-skeletons.md](references/fixes-and-skeletons.md).
 - Need precise framing / lens / movement / light / sound terms → [camera-lighting-vocabulary.md](references/camera-lighting-vocabulary.md).

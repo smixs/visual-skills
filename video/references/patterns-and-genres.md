@@ -107,6 +107,15 @@ Spatial clarity above all else.
 - Tone. Urgency. Force. Readable chaos.
 - Pace. Fast but geometrically clear.
 
+### Race / speed
+
+Authentic velocity. Faceless detail-as-emotion. Cold combative palette.
+
+- Style. Low bumper-height. Asphalt streaking in frame. Foreground reference objects passing. Hard light on metal/rubber/sweat. Beat-locked cutting that collapses toward the launch.
+- Tone. Threat, not glamour. Force transmission over shiny bodywork.
+- Pace. Silence-then-bang. Held ritual, exploding launch, dense contest, one held aftermath.
+- For the full grammar (schools, start-line ritual, 5 shot families, drift adaptation, anti-fake guard) load `race-and-speed.md`; for turning it into still panels load `animatic-keyframes.md`.
+
 ### Fashion
 
 Symmetric framing. Controlled palette. Repeated silhouettes.
