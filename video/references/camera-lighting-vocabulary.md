@@ -13,6 +13,8 @@ Use precise production language. "Cinematic" is not a direction. "35mm, slow pus
 7. Color discipline
 8. Sound categories
 9. Blocking language
+10. Translating uncommon terms
+11. Transition vocabulary
 
 ---
 
@@ -57,8 +59,13 @@ Use precise production language. "Cinematic" is not a direction. "35mm, slow pus
 - crane shot
 - aerial shot
 - Hitchcock zoom (dolly-zoom)
+- dive (camera plunges downward)
+- FPV (drone first-person flight)
+- one-take shot
+- bullet time
+- bounce speed ramp (speed up - slow down - speed up)
 
-Universal rule. Pick one dominant move per 5-second shot. Layer one subtle secondary move at most.
+Universal rule. Pick one dominant move per 5-second shot. Layer one subtle secondary move at most. The popular techniques (one-take, dolly zoom, FPV, bullet time, bounce speed ramp) still need a subject, a start point and an end point — the name alone is not a direction.
 
 ## 3. Lens language
 
@@ -201,6 +208,42 @@ The man stands in the kitchen doorway, shoulders collapsed. He slowly approaches
 ```
 
 This beats "a sad man goes to the fridge" because it is playable by the model frame by frame.
+
+## 10. Translating uncommon terms
+
+Common terms (section 2) work by name. For rarer cinematography terms, keep the term **and** translate it into observable change, or the model guesses:
+
+```text
+Term + target subject + visual change + foreground/background relationship + direction or speed
+```
+
+Example.
+
+```text
+Rack focus: shift focus smoothly from the leaves in the foreground to the person
+in the background. The leaves gradually blur while the person's face changes
+from soft to sharp.
+```
+
+Same pattern for snorricam, contra-zoom variants, tilt-shift, split diopter, speed ramps with specific curves. Numeric aperture and focal-length values are allowed, but the intended visible result phrased in words is what actually steers the model.
+
+## 11. Transition vocabulary
+
+Named transitions every current model understands to some degree (Seedance 2.5 honors them explicitly — templates in `seedance-25.md` §10):
+
+- **natural cut** — plain edit point, model picks the framing change
+- **fade in / fade out** — to or from black
+- **dissolve** — cross-fade, 1-2 seconds of overlap
+- **white flash / black flash** — one-frame blast, impact punctuation
+- **wipe** — new frame pushes the old one off
+- **occlusion mask** — a foreground object covers the lens, the new scene is revealed behind it
+- **match cut** — similar shape or motion bridges two scenes (moon → latte)
+- **action cut / whip pan** — cut hidden inside fast motion with motion blur
+- **motion relay** — subject exits frame A mid-move and lands in frame B continuing it
+- **zoom-through** — camera dives through a pupil, keyhole or window into the next scene
+- **ink-wash dissolve** — stylized bleed, common in guofeng / animation work
+
+Rules of use. Name the transition and the exact moment it fires. One transition type per cut. When the choice is open, delegate: "choose the most suitable from [natural cut / occlusion mask / match cut] for the style of this film."
 
 ---
 

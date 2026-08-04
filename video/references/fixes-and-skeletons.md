@@ -124,6 +124,38 @@ Fix. Avoid style words like "hyperrealistic 8k masterpiece." These push the mode
 Shot on 50mm, natural skin texture, motivated lighting, documentary feel.
 ```
 
+### Twins / face-blending in multi-person scenes
+
+Two or more characters converge into near-identical faces, or background extras clone the hero.
+
+Fix. Bind each subject to its own reference individually (see `universal-rules.md` U13), then force differentiation.
+
+```text
+Their movements are not synchronized. Clothing colors, hairstyles, and facial features must all be distinct. No identical clones in the background.
+```
+
+### Objects or characters appear too early in an extension
+
+When extending a clip backward (prepending a beginning), elements that belong to the source video leak into the past.
+
+Fix. Flag them explicitly.
+
+```text
+<Materials that should appear only after the source video begins> must not appear early in the backward extension.
+```
+
+For forward extensions, the standard clause: "prohibit rigid cutting, prohibit objects appearing out of thin air."
+
+### Random subtitles or unwanted background music
+
+Fix. Ban directly and repeat the ban at the end of the prompt.
+
+```text
+Pure video, no subtitles, no background music.
+```
+
+On Seedance 2.5 and Veo this is reliable. On Seedance 1.x/2.0 and Kling, also avoid mentioning any on-screen text or score you do not want — mentions summon them.
+
 ---
 
 ## 3. Cross-model prompt skeletons

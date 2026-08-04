@@ -4,7 +4,7 @@
 
 1. What Seedance is
 2. Versions and specs
-3. CLI parameters
+3. CLI parameters (1.x / 2.0 only)
 4. The Details Law (read first)
 5. 6-step prompt formula (quick)
 6. Production-grade skeleton (11 blocks) — for dramatic / multi-shot work
@@ -18,7 +18,7 @@
 14. Audio (1.5+)
 15. Failure modes and fixes
 16. Worked example. 15-second tragicomedy as 3 × 5s clips
-17. Seedance 2.5 — the 30-second single-pass clip
+17. Seedance 2.5 → read `seedance-25.md`
 
 ---
 
@@ -32,15 +32,15 @@ A ByteDance video model with the UNIQUE ability to generate several distinct sho
 - Seedance 1.0 Lite. 720p, faster, cheaper.
 - Seedance 1.5 Pro. Native audio and lip-sync added.
 - Seedance 2.0. Improved motion, better audio, 9 camera movement presets, limited negative prompt support, up to 12 reference inputs via `@` tags. Since June 2026: native 4K, 10-bit color. 2.0 Mini: ~2× faster, ~30% cheaper, for drafts and batches.
-- **Seedance 2.5** (API since July 2026). Native 30-second single-pass clip (no stitching), up to 50 multimodal reference inputs (images + video + audio + style guides), 3D white-box camera blockout, localized re-draw of part of the frame without touching motion/camera/light, 11 prompt languages. See section 17.
+- **Seedance 2.5** (released 2026-07-31). Native 30-second single-pass clip, up to 60s via extension, 30-180s in Ultra Long mode. 50 multimodal reference inputs (30 images + 10 video + 10 audio), video editing (partial re-render), 3D white-model camera blockout, realistic humans with multilingual lip-sync in 11 languages. **Full production reference: `seedance-25.md`.**
 
-Resolutions. 480p, 720p, 1080p; 2.0/2.5 add native 4K.
+Resolutions. 480p, 720p, 1080p; 2.0 adds native 4K; 2.5 outputs 480p/720p on Jimeng.
 Aspect ratios. 16:9, 4:3, 1:1, 3:4, 9:16, 21:9, 9:21.
 Frame rate. 24-30 fps.
 
-**Model pick within the family:** people-centric drama with faces → 1.5 Pro (2.0/2.5 aggressively filter human faces and celebrity-adjacent content after the 2026 deepfake crackdown; for face-heavy work Kling or Veo are safer). Scenes, architecture, product, montage → 2.0. One continuous 15-30s arc or heavy reference kits → 2.5. Cheap drafts → 2.0 Mini, then re-render keepers high.
+**Model pick within the family:** one continuous 15-30s arc, heavy reference kits, editing/extension of existing footage → 2.5 (realistic humans and lip-sync are a 2.5 headline feature — the 2.0-era face caution below does not apply to it). People-centric drama on a 2.0-only pipeline → 1.5 Pro (2.0 aggressively filters human faces and celebrity-adjacent content after the 2026 deepfake crackdown). Scenes, architecture, product, montage in short clips → 2.0. Cheap drafts → 2.0 Mini, then re-render keepers high.
 
-## 3. CLI parameters
+## 3. CLI parameters (1.x / 2.0 only)
 
 Append at the end of the prompt.
 
@@ -52,6 +52,8 @@ Append at the end of the prompt.
 - `--duration`. 2 to 12 (Pro)
 - `--camerafixed`. true locks the camera. false allows movement.
 - `--seed`. for reproducibility
+
+**Not 2.5 syntax.** On 2.5, duration / aspect ratio / resolution are set on the generation page or via API and do not belong in the prompt (exception: Ultra Long mode restates duration and ratio at the top — see `seedance-25.md` §2).
 
 ## 4. The Details Law (read this first)
 
@@ -247,7 +249,9 @@ Seedance 1.0 Pro does NOT support negative prompts. No `--no blur` syntax works.
 
 Seedance 2.0 adds limited negative prompt support but it's fragile and often ignored.
 
-Workaround. Always invert to positive phrasing. Instead of "no yellow tones" write "cold blue-gray palette with desaturated skin tones." Instead of "no distorted hands" write "anatomically correct hands with clear finger separation."
+Workaround for 1.x/2.0. Always invert to positive phrasing. Instead of "no yellow tones" write "cold blue-gray palette with desaturated skin tones." Instead of "no distorted hands" write "anatomically correct hands with clear finger separation."
+
+**Seedance 2.5 fixed this.** Direct bans are reliable: "pure video, no subtitles, no background music" actually suppresses them, and specific prohibition lists ("no exaggerated crying, no fast cuts") are a core part of the official 2.5 prompt structure. See `seedance-25.md` §7.
 
 ## 13. Image-to-video rule
 
@@ -266,7 +270,7 @@ Audio. fridge hum, distant rain on window, one stomach growl at 2.3 sec, final s
 
 Rules:
 
-- Dialogue goes in **double quotes** — the model voices it, generates the voice and syncs lips to the cut. State the delivery: "Play her line dry and a little proud, his quiet and worn out."
+- Dialogue goes in **double quotes** on 1.5/2.0 — the model voices it, generates the voice and syncs lips to the cut. State the delivery: "Play her line dry and a little proud, his quiet and worn out." **On 2.5, use the dedicated markers instead**: dialogue in `{ }`, SFX in `< >`, music in `( )`, titles in `【 】` (see `seedance-25.md` §4).
 - Keep lines short. Long monologues drift out of sync — split into several lines and hold sync with cuts. Still less robust than Veo for speech-first work.
 - Write **"no music"** explicitly when you want none — otherwise the model lays an ad-style score under everything.
 - Subtitles: describe the voiceover, then ask for "text along the bottom edge, timed to the voice".
@@ -301,9 +305,9 @@ Fix. Each shot needs a distinct emotional function (Establish / Power / Pressure
 
 Fix. Apply the Details Law (section 4). Audit your draft: every shot must have one environmental pressure, one micro-action, one sound or visual motif anchor. Replace adjectives like "dramatic", "intense", "beautiful" with concrete physical facts.
 
-### Human faces rejected or degraded (2.0 / 2.5)
+### Human faces rejected or degraded (2.0)
 
-After the 2026 deepfake crackdown, 2.0+ aggressively filters human faces, helmets, sunglasses, and anything resembling protected IP or celebrity likeness. Fix. Route face-heavy drama to Seedance 1.5 Pro, Kling, or Veo; keep 2.0/2.5 for scenes, architecture, product and montage work. Use only owned or synthetic character references.
+After the 2026 deepfake crackdown, 2.0 aggressively filters human faces, helmets, sunglasses, and anything resembling protected IP or celebrity likeness. Fix. Route face-heavy drama to Seedance 2.5 (realistic humans are its headline feature), 1.5 Pro, Kling, or Veo; keep 2.0 for scenes, architecture, product and montage work. Use only owned or synthetic character references — the IP/celebrity filter applies on 2.5 too.
 
 ## 16. Worked example. 15-second tragicomedy as 3 × 5s clips
 
@@ -396,43 +400,11 @@ Continuity. [what must remain constant across shots].
 
 For dramatic, multi-shot, character-locked, or stitched-clip work — always use the 11-block production-grade skeleton from section 6.
 
-## 17. Seedance 2.5 — the 30-second single-pass clip
+## 17. Seedance 2.5 → read `seedance-25.md`
 
-2.5 changes the workflow: a 15-30s narrative that used to be 3-6 stitched clips can now be **one generation with one continuous arc**. The dramaturgy does not change — the beat map from `dramaturgy.md` §10 simply moves inside a single prompt.
+2.5 changes the workflow: a 15-30s narrative that used to be 3-6 stitched clips is now one generation with one continuous arc, extendable to 60s, with a separate Ultra Long mode to 180s. The dramaturgy does not change — the beat map from `dramaturgy.md` §10 moves inside a single prompt.
 
-### Prompt = compact shot-list with beat timings
-
-Structure each beat as Subject → Action → Camera → Style, laid out on a timeline. Default 6-8 seconds per beat, 3-4 seconds for the resolution:
-
-```text
-00-06s  Hook.       <subject + action + camera + one environmental pressure>
-06-14s  Pressure.   <...>
-14-24s  Crack.      <...>
-24-30s  Resolution. <final image, held>
-```
-
-- Name both the shot size (**CU / MCU / WS**) and the move (**push-in, dolly left, orbit, handheld drift**) on every beat. "Cinematic" tells the model nothing.
-- Ask for transitions explicitly (match cut, whip pan) — do not hope. Foreshadowing works: an insert in the opening beat, returned in the last 3 seconds.
-- Physics: describe the **consequence** of an action, not just the action — the model renders real physics.
-
-### Character consistency across 30 seconds
-
-- Attach 2-3 portrait stills per hero and tag them (`@Image1`, `@Image2`).
-- Repeat wardrobe, props and time of day in every beat — this is what suppresses drift.
-- Write the eyeline logic (what the hero looks at) so the model keeps spatial continuity.
-- Independent long-form tests are still scarce: verify face and light consistency across all 30s yourself before promising it to a client.
-
-### 3D white-box blockout (previz inside the model)
-
-Reference-to-video accepts green-screen plates or rough 3D geometry to lock camera path, staging and blocking before spending render money. Use for complex blocking the same way you would previz a real shoot.
-
-### Localized re-draw
-
-2.5 can re-render part of the frame (product, background, one subject) without changing motion, camera or lighting — one master cut becomes SKU / locale / seasonal variants. Prompt the patch only; do not re-describe the untouched scene.
-
-### Workflow discipline
-
-Draft low, finish high: block at low resolution, re-render the keeper at 4K. The experimental long-video mode beyond 30s (up to ~180s) is unstable — treat 30s as the reliable ceiling.
+Everything 2.5-specific lives in **`seedance-25.md`**: the official prompt formulas, the `( ) < > { } 【 】` markers, the 50-slot reference discipline, stages + end states, video editing, extension, Ultra Long, blockout/green-screen pipeline, and the official worked examples. For any 2.5 production task, read that file before writing the prompt.
 
 ---
 

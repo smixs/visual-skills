@@ -19,6 +19,8 @@ Read this file after `dramaturgy.md` and before any model-specific file. The mod
 11. U10. Duration discipline
 12. U11. The final image rule
 13. U12. The three-detail check (audit before sending)
+14. U13. Reference role discipline
+15. U14. Priority declaration
 
 ---
 
@@ -72,6 +74,8 @@ The model cannot render feelings. It renders bodies. Translate every emotion int
 - Bad. "He is scared."
 - Good. "His jaw locks. He stops breathing for one beat. His fingers curl against the doorframe."
 
+Calibration: for one emotional transition, **2-4 observable cues** (eye movement, brow tension, mouth, breathing, throat swallow, hands) are enough. Fewer leaves the model guessing; more reads as overacting.
+
 ## 5. U4. Natural language beats tag spam
 
 Video models are not image models. Tag stuffing like "masterpiece, 4k, cinematic, beautiful" fails. Write in full cinematic sentences as if briefing a human DOP.
@@ -119,6 +123,8 @@ The model obeys the strongest signal. Contradictions produce artifacts.
 
 This is the same rule as the Details Law in section 1, viewed from a different angle. Section 1 is the audit. This is the principle.
 
+Corollary — **consequence prompting**. Current models render real physics, so describe the consequence of an action, not just the action: tires kick up water curtains; the hand grips the jar and the lid actually unscrews; the impact shatters the surface into a spider-web pattern. Action chains where each step forces the next also work as QA — a broken chain exposes a failed generation at a glance.
+
 ## 11. U10. Duration discipline
 
 Most models work in 5-10 second clips. Longer narratives live in multiple clips stitched in the editor. Do not cram a 30-second story into a 5-second prompt.
@@ -130,9 +136,10 @@ Default splits:
 - 30s = 6 × 5s
 - 60s = 12 × 5s
 
-Two exceptions:
+Three exceptions:
 - Seedance — 2-3 shots inside one 5-10s clip via "Cut to" syntax (see `seedance.md` §8).
 - Kling 3.0 — up to 6 shots inside one generation, up to 15s, with native audio and dialogue (see `kling.md` §3).
+- Seedance 2.5 — up to 30s in one pass. The working structure is consecutive stages, each with one primary state change and an explicit visible end state (see `seedance-25.md` §6).
 
 ## 12. U11. The final image rule
 
@@ -153,6 +160,27 @@ Before returning the final prompt to the user, audit every shot. Each shot must 
 If a shot has zero, fix it before sending. If a shot has only one, ask whether you can make it two without bloat. The strongest prompts in this skill's worked examples always have all three.
 
 Empty descriptors that fail this check: "establishing wide shot", "beautiful lighting", "dynamic camera move", "cinematic look", "intense moment", "dramatic close-up". Replace each with three concrete physical facts.
+
+## 14. U13. Reference role discipline
+
+Wherever a model accepts reference assets (Seedance `@Image/@Video/@Audio`, Kling Element Binding and Omni references, Veo ingredients), **every asset gets an explicit role written in the prompt**: what it defines (appearance, motion, voice, scene, camera path) and what to ignore ("Do not use the image background", "Do not use the people in the image").
+
+- Bind each subject individually: "<Character A> corresponds to @Image 1 — use only the appearance, hairstyle, and clothing." Never the collective form "@Images 1 through 4 define four characters respectively" — it does not state which is which.
+- Do not restate what a reference already defines. If a video reference carries the motion, name only the attributes to inherit; re-describing every action fights the reference.
+- More assets is not more control. Control comes from role clarity; unassigned assets bleed into the frame.
+
+Model-specific limits and templates live in the model files (`seedance-25.md` §5 has the fullest system).
+
+## 15. U14. Priority declaration
+
+When a prompt is overloaded (10+ scenes, many subjects, spatial tricks), adding more description makes it worse. Instead, declare priorities — the model cannot know what matters most unless told what to protect and what to sacrifice:
+
+1. The core subject that must survive every shot.
+2. The key shots that must appear.
+3. The transitions where the model may freestyle.
+4. The mandatory final frame.
+
+This ranks above prompt-length discipline: a shorter prompt with declared priorities beats a longer one without them.
 
 ---
 
