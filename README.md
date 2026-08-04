@@ -17,7 +17,7 @@ Most prompting guides teach you syntax. This one teaches your agent **cinema** �
 
 **Image:** Nano Banana 2 Lite / Nano Banana 2 / Nano Banana Pro (Gemini image family) · GPT Image 2 (plus legacy 1.5 / 1 / mini).
 
-Model files are updated as new versions ship — Seedance 2.5 (30-second single-pass clips, 50 reference inputs, 3D camera blockout), Kling 3.0 Turbo and Omni, and Nano Banana 2 Lite are already in.
+Model files are updated as new versions ship — Seedance 2.5 has a dedicated production reference built from ByteDance's official guides of July 31, 2026 (30-second single-pass clips, 60s extension, 30-180s Ultra Long mode, 50 reference inputs, video editing, 3D camera blockout); Kling 3.0 Turbo and Omni and Nano Banana 2 Lite are already in.
 
 ## Dramaturgy first, syntax second
 
