@@ -5,7 +5,7 @@
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
 
-**🇷🇺 [Читать на русском](README.ru.md)**
+**[Читать на русском](README.ru.md)**
 
 Two Claude Skills that turn your agent into a working film crew: `video` writes AI video prompts the way a director, screenwriter and editor would; `image` writes image prompts the way an art director would. Both pick the right model for the task, apply its exact syntax, and return a copy-paste-ready prompt.
 
