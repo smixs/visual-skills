@@ -1,4 +1,4 @@
-# 🎬 Visual Skills — an AI Film Director for Your Agent
+# 🎬 Visual Skills — AI Film Director for Your Movie
 
 ![Visual Skills — one toolkit for both images and video](assets/hero.webp)
 
@@ -88,6 +88,6 @@ Dramaturgy distilled from Walter Murch (*In the Blink of an Eye*), Akira Kurosaw
 
 ## License
 
-**CC BY 4.0** — use it, fork it, build on it, commercially too. One hard rule: **credit the author**. Any copy or derivative — including skills assembled by AI agents from these files — must keep the attribution line: *Serge Shima — [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+**CC BY 4.0** — use it, fork it, build on it, commercially too. One rule: **credit the author**. Any copy or derivative — including skills assembled by AI agents from these files — must keep the attribution line: *Serge Shima — [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
 **Tags:** `claude` · `claude-skills` · `ai-video-generation` · `ai-image-generation` · `seedance` · `kling` · `veo` · `nano-banana` · `gpt-image-2` · `ai-film-directing` · `storyboard` · `prompt-engineering`
