@@ -1,6 +1,6 @@
 <div align="right"><a href="README.md">En</a> | <strong>Ru</strong></div>
 
-# 🎬 Visual Skills - AI-кинорежиссёр для вашего агента
+# 🎬 Visual Skills - AI-кинорежиссёр для вашего фильма
 
 ![Visual Skills - один инструмент и для картинок, и для видео](assets/hero.webp)
 
@@ -88,6 +88,6 @@ cp -r visual-skills/video visual-skills/image ~/.claude/skills/
 
 ## Лицензия
 
-**CC BY 4.0** - используйте, форкайте, стройте своё, в том числе коммерчески. Одно жёсткое правило: **указывайте автора**. Любая копия или производная, включая скиллы, собранные AI-агентами из этих файлов, обязана сохранить строку атрибуции: *Serge Shima - [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. Подробности в [LICENSE](LICENSE) и [NOTICE](NOTICE).
+**CC BY 4.0** - используйте, форкайте, стройте своё, в том числе коммерчески. Одно правило: **указывайте автора**. Любая копия или производная, включая скиллы, собранные AI-агентами из этих файлов, обязана сохранить строку атрибуции: *Serge Shima - [github.com/smixs/visual-skills](https://github.com/smixs/visual-skills)*. Подробности в [LICENSE](LICENSE) и [NOTICE](NOTICE).
 
 **Теги:** `claude` · `claude-skills` · `ai-video-generation` · `ai-image-generation` · `seedance` · `kling` · `veo` · `nano-banana` · `gpt-image-2` · `ai-film-directing` · `storyboard` · `prompt-engineering`
