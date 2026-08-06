@@ -13,7 +13,12 @@ Most prompting guides teach you syntax. This one teaches your agent **cinema** �
 
 ## What's new
 
-**2026-08-04 — Seedance 2.5 production reference.** New [`video/references/seedance-25.md`](video/references/seedance-25.md), built from ByteDance's official User Guide and Prompt Guide (released July 31): the official prompt formulas, the `( ) < > { } 【 】` audio/dialogue/text markers, the 50-slot reference discipline with stability tables, stages + end states for 30-second single-pass clips, video editing (partial re-render), extension to 60s, Ultra Long mode (30–180s), the 3D-blockout / green-screen pipeline, and three official worked examples. Cross-model additions landed too: a transition vocabulary and an uncommon-term translation pattern in the camera file, reference-role discipline and priority declaration in the universal rules.
+<details>
+<summary><b>2026-08-04 — Seedance 2.5 production reference</b></summary>
+
+New [`video/references/seedance-25.md`](video/references/seedance-25.md), built from ByteDance's official User Guide and Prompt Guide (released July 31): the official prompt formulas, the `( ) < > { } 【 】` audio/dialogue/text markers, the 50-slot reference discipline with stability tables, stages + end states for 30-second single-pass clips, video editing (partial re-render), extension to 60s, Ultra Long mode (30–180s), the 3D-blockout / green-screen pipeline, and three official worked examples. Cross-model additions landed too: a transition vocabulary and an uncommon-term translation pattern in the camera file, reference-role discipline and priority declaration in the universal rules.
+
+</details>
 
 ## Supported models
 
