@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-labelledby="ttl dsc">
+<title id="ttl">Dramaturgy first, syntax second</title>
+<desc id="dsc">A letterboxed film-gate title card on black. The manifesto line reads: Model syntax is irrelevant until you have dramaturgy. Framing marks read VISUAL SKILLS / VIDEO and REFERENCES / DRAMATURGY.MD, above a strip listing the hard rules - editing, staging, camera, light, objects in frame.</desc>
+<defs>
+<radialGradient id="gate" cx="50%" cy="44%" r="72%">
+<stop offset="0" stop-color="#13272B"/>
+<stop offset="0.55" stop-color="#0A1214"/>
+<stop offset="1" stop-color="#05080A"/>
+</radialGradient>
+<linearGradient id="ruleL" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0.34"/>
+</linearGradient>
+<linearGradient id="ruleR" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0" stop-color="#FFFFFF" stop-opacity="0.34"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+</defs>
+
+<rect width="1200" height="400" fill="#000000"/>
+<rect x="0" y="44" width="1200" height="312" fill="url(#gate)"/>
+<rect x="0" y="44" width="1200" height="1" fill="#FFFFFF" fill-opacity="0.07"/>
+<rect x="0" y="355" width="1200" height="1" fill="#FFFFFF" fill-opacity="0.07"/>
+
+<g fill="#FFFFFF" fill-opacity="0.055"><rect x="16" y="3" width="22" height="15" rx="3.5"/><rect x="16" y="30" width="22" height="15" rx="3.5"/><rect x="16" y="57" width="22" height="15" rx="3.5"/><rect x="16" y="84" width="22" height="15" rx="3.5"/><rect x="16" y="111" width="22" height="15" rx="3.5"/><rect x="16" y="138" width="22" height="15" rx="3.5"/><rect x="16" y="165" width="22" height="15" rx="3.5"/><rect x="16" y="192" width="22" height="15" rx="3.5"/><rect x="16" y="219" width="22" height="15" rx="3.5"/><rect x="16" y="246" width="22" height="15" rx="3.5"/><rect x="16" y="273" width="22" height="15" rx="3.5"/><rect x="16" y="300" width="22" height="15" rx="3.5"/><rect x="16" y="327" width="22" height="15" rx="3.5"/><rect x="16" y="354" width="22" height="15" rx="3.5"/><rect x="16" y="381" width="22" height="15" rx="3.5"/><rect x="1162" y="3" width="22" height="15" rx="3.5"/><rect x="1162" y="30" width="22" height="15" rx="3.5"/><rect x="1162" y="57" width="22" height="15" rx="3.5"/><rect x="1162" y="84" width="22" height="15" rx="3.5"/><rect x="1162" y="111" width="22" height="15" rx="3.5"/><rect x="1162" y="138" width="22" height="15" rx="3.5"/><rect x="1162" y="165" width="22" height="15" rx="3.5"/><rect x="1162" y="192" width="22" height="15" rx="3.5"/><rect x="1162" y="219" width="22" height="15" rx="3.5"/><rect x="1162" y="246" width="22" height="15" rx="3.5"/><rect x="1162" y="273" width="22" height="15" rx="3.5"/><rect x="1162" y="300" width="22" height="15" rx="3.5"/><rect x="1162" y="327" width="22" height="15" rx="3.5"/><rect x="1162" y="354" width="22" height="15" rx="3.5"/><rect x="1162" y="381" width="22" height="15" rx="3.5"/></g>
+
+<g fill="none" stroke="#8FD8CB" stroke-opacity="0.55" stroke-width="1.6">
+<path d="M76 88V64h24"/>
+<path d="M1124 88V64h-24"/>
+<path d="M76 312V336h24"/>
+<path d="M1124 312V336h-24"/>
+</g>
+
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600" letter-spacing="3.4" fill="#FFFFFF" fill-opacity="0.42">
+<text x="118" y="82">VISUAL SKILLS &#183; VIDEO</text>
+<text x="1082" y="82" text-anchor="end">REFERENCES / DRAMATURGY.MD</text>
+</g>
+
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" text-anchor="middle" font-size="57" letter-spacing="-0.6">
+<text x="600" y="184" font-weight="500" fill="#E9EEF0">Model syntax is irrelevant</text>
+<text x="600" y="249" font-weight="700" fill="#8FD8CB">until you have dramaturgy.</text>
+</g>
+
+<rect x="326" y="286" width="238" height="1.4" fill="url(#ruleL)"/>
+<rect x="636" y="286" width="238" height="1.4" fill="url(#ruleR)"/>
+<rect x="596" y="282.5" width="8" height="8" rx="1" fill="#8FD8CB" fill-opacity="0.75"/>
+
+<text x="600" y="328" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="21" font-weight="600" letter-spacing="3.6" fill="#FFFFFF" fill-opacity="0.62">EDITING &#183; STAGING &#183; CAMERA &#183; LIGHT &#183; OBJECTS IN FRAME</text>
+</svg>
