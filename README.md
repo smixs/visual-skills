@@ -1,11 +1,11 @@
+<div align="right"><strong>En</strong> | <a href="README.ru.md">Ru</a></div>
+
 # 🎬 Visual Skills — AI Film Director for Your Movie
 
 ![Visual Skills — one toolkit for both images and video](assets/hero.webp)
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
-
-**[Читать на русском](README.ru.md)**
 
 Two Claude Skills that turn your agent into a working film crew: `video` writes AI video prompts the way a director, screenwriter and editor would; `image` writes image prompts the way an art director would. Both pick the right model for the task, apply its exact syntax, and return a copy-paste-ready prompt.
 
@@ -68,9 +68,9 @@ Or install the packaged archives: `claude install video.skill` / `claude install
 
 ## Usage
 
-> "Напиши промпт для Seedance — голодный мужик ночью находит последнюю сосиску в холодильнике, 5 секунд, мульти-шот"
+> "Write a Seedance prompt — a hungry guy at night finds the last sausage in the fridge, 5 seconds, multi-shot"
 
-> "Раскадруй 30-секундный ролик про чувство вины. Главная эмоция — guilt. Опорный объект — телефон с непрочитанным сообщением."
+> "Storyboard a 30-second film about guilt. Core emotion — guilt. Anchor object — a phone with an unread message."
 
 > "Audit this prompt: [...]. What's broken, how to fix?"
 

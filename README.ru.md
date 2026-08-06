@@ -1,11 +1,11 @@
+<div align="right"><a href="README.md">En</a> | <strong>Ru</strong></div>
+
 # 🎬 Visual Skills - AI-кинорежиссёр для вашего агента
 
 ![Visual Skills - один инструмент и для картинок, и для видео](assets/hero.webp)
 
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
-
-**🇬🇧 [Read in English](README.md)**
 
 Два Claude-скилла, которые превращают агента в съёмочную группу. `video` пишет промпты для AI-видео как режиссёр, сценарист и монтажёр в одном лице. `image` пишет промпты для картинок как арт-директор. Оба сами выбирают модель под задачу, применяют её точный синтаксис и возвращают готовый к копированию промпт.
 
