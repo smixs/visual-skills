@@ -17,6 +17,8 @@ Most prompting guides teach you syntax. This one teaches your agent **cinema** â
 
 ## Supported models
 
+<div align="center">
+
 <table>
   <tr>
     <th colspan="6" align="center"><sub>VIDEO Â· DEDICATED MODEL FILE, EXACT SYNTAX</sub></th>
@@ -48,6 +50,8 @@ Most prompting guides teach you syntax. This one teaches your agent **cinema** â
     </td>
   </tr>
 </table>
+
+</div>
 
 Model files are updated as new versions ship â€” Seedance 2.5 has a dedicated production reference built from ByteDance's official guides of July 31, 2026 (30-second single-pass clips, 60s extension, 30-180s Ultra Long mode, 50 reference inputs, video editing, 3D camera blockout); Kling 3.0 Turbo and Omni and Nano Banana 2 Lite are already in.
 
