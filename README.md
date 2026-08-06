@@ -17,9 +17,37 @@ Most prompting guides teach you syntax. This one teaches your agent **cinema** �
 
 ## Supported models
 
-**Video:** Seedance 1.0 / 1.5 Pro / 2.0 / 2.0 Mini / 2.5 · Kling 1.6 – 2.6 Pro, Kling 3.0 / 3.0 Turbo / 3.0 Omni · Veo 3 / 3.1. Runway Gen-4, Luma, Pika and Sora are covered by the universal rules layer.
-
-**Image:** Nano Banana 2 Lite / Nano Banana 2 / Nano Banana Pro (Gemini image family) · GPT Image 2 (plus legacy 1.5 / 1 / mini).
+<table>
+  <tr>
+    <th colspan="6" align="center"><sub>VIDEO · DEDICATED MODEL FILE, EXACT SYNTAX</sub></th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/seedance.md"><img width="38" alt="Seedance" src="assets/logos/bytedance-color.svg"><br><b>Seedance</b></a><br><sub>1.0 · 1.5 Pro · 2.0 · 2.0 Mini · 2.5</sub></td>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/kling.md"><img width="38" alt="Kling" src="assets/logos/kling-color.svg"><br><b>Kling</b></a><br><sub>1.6 – 2.6 Pro · 3.0 · Turbo · Omni</sub></td>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/veo.md"><img width="38" alt="Veo" src="assets/logos/deepmind-color.svg"><br><b>Veo</b></a><br><sub>3 · 3.1</sub></td>
+  </tr>
+  <tr>
+    <th colspan="6" align="center"><sub>IMAGE · DEDICATED MODEL FILE, EXACT SYNTAX</sub></th>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" width="50%"><a href="image/references/nano-banana.md"><img width="38" alt="Nano Banana" src="assets/logos/nanobanana-color.svg"><br><b>Nano Banana</b></a><br><sub>2 Lite · 2 · Pro <em>(Gemini image family)</em></sub></td>
+    <td colspan="3" align="center" width="50%"><a href="image/references/gpt-image.md"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/openai-dark.svg"><img width="38" alt="GPT Image" src="assets/logos/openai.svg"></picture><br><b>GPT Image</b></a><br><sub>2 · legacy 1.5 / 1 / mini</sub></td>
+  </tr>
+  <tr>
+    <th colspan="6" align="center"><sub>COVERED BY THE <a href="video/references/universal-rules.md">UNIVERSAL-RULES</a> LAYER</sub></th>
+  </tr>
+  <tr>
+    <td colspan="6" align="center">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/runway-dark.svg"><img width="17" align="middle" alt="Runway" src="assets/logos/runway.svg"></picture> <b>Runway</b> <sub>Gen-4</sub>
+      &nbsp;&nbsp;
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/luma-color-dark.svg"><img width="17" align="middle" alt="Luma" src="assets/logos/luma-color.svg"></picture> <b>Luma</b>
+      &nbsp;&nbsp;
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/pika-dark.svg"><img width="17" align="middle" alt="Pika" src="assets/logos/pika.svg"></picture> <b>Pika</b>
+      &nbsp;&nbsp;
+      <picture><img width="17" align="middle" alt="Sora" src="assets/logos/sora-color.svg"></picture> <b>Sora</b>
+    </td>
+  </tr>
+</table>
 
 Model files are updated as new versions ship — Seedance 2.5 has a dedicated production reference built from ByteDance's official guides of July 31, 2026 (30-second single-pass clips, 60s extension, 30-180s Ultra Long mode, 50 reference inputs, video editing, 3D camera blockout); Kling 3.0 Turbo and Omni and Nano Banana 2 Lite are already in.
 
@@ -85,6 +113,8 @@ Or install the packaged archives: `claude install video.skill` / `claude install
 ## Credits
 
 Dramaturgy distilled from Walter Murch (*In the Blink of an Eye*), Akira Kurosawa, David Fincher, Steven Spielberg, Jonathan Glazer and Bong Joon Ho. Model syntax verified against official ByteDance, Kuaishou, Google and OpenAI docs plus fal.ai prompting guides, July 2026.
+
+Vendor marks in the model table come from [lobe-icons](https://github.com/lobehub/lobe-icons) (MIT). Each mark stays the property of its owner and is used here only to identify the model it labels.
 
 ## License
 

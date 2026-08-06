@@ -17,9 +17,37 @@
 
 ## Поддерживаемые модели
 
-**Видео:** Seedance 1.0 / 1.5 Pro / 2.0 / 2.0 Mini / 2.5 · Kling 1.6 - 2.6 Pro, Kling 3.0 / 3.0 Turbo / 3.0 Omni · Veo 3 / 3.1. Runway Gen-4, Luma, Pika и Sora закрыты слоем универсальных правил.
-
-**Картинки:** Nano Banana 2 Lite / Nano Banana 2 / Nano Banana Pro (семейство Gemini) · GPT Image 2 (плюс legacy 1.5 / 1 / mini).
+<table>
+  <tr>
+    <th colspan="6" align="center"><sub>ВИДЕО · ОТДЕЛЬНЫЙ ФАЙЛ МОДЕЛИ, ТОЧНЫЙ СИНТАКСИС</sub></th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/seedance.md"><img width="38" alt="Seedance" src="assets/logos/bytedance-color.svg"><br><b>Seedance</b></a><br><sub>1.0 · 1.5 Pro · 2.0 · 2.0 Mini · 2.5</sub></td>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/kling.md"><img width="38" alt="Kling" src="assets/logos/kling-color.svg"><br><b>Kling</b></a><br><sub>1.6 – 2.6 Pro · 3.0 · Turbo · Omni</sub></td>
+    <td colspan="2" align="center" width="33.3%"><a href="video/references/veo.md"><img width="38" alt="Veo" src="assets/logos/deepmind-color.svg"><br><b>Veo</b></a><br><sub>3 · 3.1</sub></td>
+  </tr>
+  <tr>
+    <th colspan="6" align="center"><sub>КАРТИНКИ · ОТДЕЛЬНЫЙ ФАЙЛ МОДЕЛИ, ТОЧНЫЙ СИНТАКСИС</sub></th>
+  </tr>
+  <tr>
+    <td colspan="3" align="center" width="50%"><a href="image/references/nano-banana.md"><img width="38" alt="Nano Banana" src="assets/logos/nanobanana-color.svg"><br><b>Nano Banana</b></a><br><sub>2 Lite · 2 · Pro <em>(семейство Gemini)</em></sub></td>
+    <td colspan="3" align="center" width="50%"><a href="image/references/gpt-image.md"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/openai-dark.svg"><img width="38" alt="GPT Image" src="assets/logos/openai.svg"></picture><br><b>GPT Image</b></a><br><sub>2 · legacy 1.5 / 1 / mini</sub></td>
+  </tr>
+  <tr>
+    <th colspan="6" align="center"><sub>ЗАКРЫТЫ СЛОЕМ <a href="video/references/universal-rules.md">УНИВЕРСАЛЬНЫХ ПРАВИЛ</a></sub></th>
+  </tr>
+  <tr>
+    <td colspan="6" align="center">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/runway-dark.svg"><img width="17" align="middle" alt="Runway" src="assets/logos/runway.svg"></picture> <b>Runway</b> <sub>Gen-4</sub>
+      &nbsp;&nbsp;
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/luma-color-dark.svg"><img width="17" align="middle" alt="Luma" src="assets/logos/luma-color.svg"></picture> <b>Luma</b>
+      &nbsp;&nbsp;
+      <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logos/pika-dark.svg"><img width="17" align="middle" alt="Pika" src="assets/logos/pika.svg"></picture> <b>Pika</b>
+      &nbsp;&nbsp;
+      <picture><img width="17" align="middle" alt="Sora" src="assets/logos/sora-color.svg"></picture> <b>Sora</b>
+    </td>
+  </tr>
+</table>
 
 Файлы моделей обновляются по мере релизов: у Seedance 2.5 отдельный производственный референс по официальным гайдам ByteDance от 31 июля 2026 (30-секундный клип одной генерацией, расширение до 60с, режим Ultra Long 30–180с, 50 референсов, редактирование видео, 3D-блокаут камеры); Kling 3.0 Turbo и Omni, Nano Banana 2 Lite уже внутри.
 
@@ -85,6 +113,8 @@ cp -r visual-skills/video visual-skills/image ~/.claude/skills/
 ## Источники
 
 Драматургия дистиллирована из Уолтера Мёрча («In the Blink of an Eye»), Акиры Куросавы, Дэвида Финчера, Стивена Спилберга, Джонатана Глейзера и Пон Джун-хо. Синтаксис моделей сверен с официальной документацией ByteDance, Kuaishou, Google и OpenAI и промпт-гайдами fal.ai, июль 2026.
+
+Логотипы в таблице моделей взяты из [lobe-icons](https://github.com/lobehub/lobe-icons) (MIT). Каждый знак остаётся собственностью владельца и используется здесь только для обозначения модели.
 
 ## Лицензия
 
