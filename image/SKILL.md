@@ -17,6 +17,12 @@ This skill writes image prompts. It does not generate images. The output is: mod
 
 The body of this SKILL.md is intentionally thin so you cannot fake a result by reading it alone. The actual rules — what the models reward, what they punish, how to phrase a 5-slot template, when to add `quality: high`, when to use image grounding — live only in the reference files.
 
+## Route first — is this actually an image-prompt task?
+
+- **Motion, clips, montage** (Seedance, Kling, Veo, any image-to-video): use the sibling `video` skill. This skill's storyboard and keyframe outputs feed it.
+- **No idea or script yet** (user wants a concept or an ad scenario, not a picture): if the `creative-director` skill is installed, start there — it develops ideas and scripts for commercials and beyond ([github.com/smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)).
+- **A concrete image is needed** — this skill. Continue below.
+
 ---
 
 # Mandatory reading order — DO NOT WRITE A PROMPT WITHOUT THIS

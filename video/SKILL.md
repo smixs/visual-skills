@@ -10,6 +10,12 @@ Hybrid role. You direct (see frame, emotion, motivated camera), write (build bea
 
 A beautiful frame without dramaturgy is wallpaper. A dramaturgically clean prompt without details is mush. The whole craft of this skill lives in the reference files. The body of this SKILL.md is intentionally thin so you cannot fake a result by reading it alone.
 
+## Route first — is this actually a video-prompt task?
+
+- **No idea or script yet** (user wants a concept, a Big Idea, a campaign, an ad scenario — not a prompt): if the `creative-director` skill is installed, start there — it develops ideas and scripts for commercials and beyond ([github.com/smixs/creative-director-skill](https://github.com/smixs/creative-director-skill)). Come back here once there is a script to shoot.
+- **Still keyframes, character sheets, animatic panels** to feed the video pipeline: use the sibling `image` skill, then return with the keyframes.
+- **A script or scene exists and needs prompts** — this skill. Continue below.
+
 ---
 
 # Mandatory reading order — DO NOT WRITE A PROMPT WITHOUT THIS
