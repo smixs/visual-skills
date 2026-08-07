@@ -4,6 +4,7 @@
 
 ![Visual Skills — one toolkit for both images and video](assets/hero.webp)
 
+[![skills.sh](https://skills.sh/b/smixs/visual-skills)](https://skills.sh/smixs/visual-skills)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-orange?style=flat-square)](LICENSE)
 
@@ -226,16 +227,40 @@ Art direction for still images: editorial and product photography, posters, UI m
 
 The two skills chain: `image` builds the character sheets and keyframes, `video` turns them into motion with a proper motion brief instead of a re-described scene.
 
+## Works with creative-director
+
+These skills shoot the film. The idea and the script come from their sibling skill — **[creative-director](https://github.com/smixs/creative-director-skill)**: an AI creative director that develops ideas and scripts for commercials (and far beyond advertising) with world-class ideation methodologies, recursive scoring and a library of 571 legendary campaigns.
+
+The full pipeline: **idea & script ([creative-director](https://github.com/smixs/creative-director-skill)) → keyframes & stills (`image`) → motion (`video`)**. Each stage is optional — enter wherever your project starts.
+
 ## Install
 
-Works in Claude Code, Claude.ai Projects, Cursor, Windsurf, Cline, OpenCode, Hermes — anything that reads the Claude Skill format (plain markdown, no lock-in).
+Works in Claude Code, Claude.ai Projects, Cursor, Windsurf, Cline, OpenCode, Codex, Hermes — anything that reads the Agent Skills format (plain markdown, no lock-in).
+
+**Via [skills.sh](https://skills.sh/smixs/visual-skills)** — installs into any of 70+ supported agents, Codex included:
+
+```bash
+npx skills add smixs/visual-skills          # asks where to install, offers both skills
+npx skills add smixs/visual-skills -g       # globally, for all projects
+npx skills add smixs/visual-skills@video    # just one of the two
+npx skills update                           # update to latest
+```
+
+**As a Claude Code plugin** — one managed bundle with both skills:
+
+```
+/plugin marketplace add smixs/visual-skills
+/plugin install visual-skills@visual-skills
+```
+
+**In Codex CLI** — `npx skills add smixs/visual-skills -g -a codex`, or ask the built-in installer: `$skill-installer install skills from https://github.com/smixs/visual-skills`.
+
+**Manually:**
 
 ```bash
 git clone https://github.com/smixs/visual-skills.git
 cp -r visual-skills/video visual-skills/image ~/.claude/skills/
 ```
-
-Or install the packaged archives: `claude install video.skill` / `claude install image.skill`.
 
 ## Usage
 
