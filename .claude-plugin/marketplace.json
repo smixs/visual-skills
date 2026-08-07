@@ -1,0 +1,12 @@
+{
+  "name": "visual-skills",
+  "owner": { "name": "Serge Shima", "url": "https://github.com/smixs" },
+  "description": "Visual Skills — AI film director for your movie: video and image prompting skills",
+  "plugins": [
+    {
+      "name": "visual-skills",
+      "source": "./",
+      "description": "AI film director skills: video and image prompting"
+    }
+  ]
+}

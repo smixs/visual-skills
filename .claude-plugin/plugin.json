@@ -1,0 +1,7 @@
+{
+  "name": "visual-skills",
+  "version": "1.0.0",
+  "description": "AI film director skills: video and image prompting with dramaturgy-first methodology",
+  "author": { "name": "Serge Shima", "url": "https://github.com/smixs" },
+  "skills": ["./video", "./image"]
+}
