@@ -246,6 +246,12 @@ npx skills add smixs/visual-skills@video    # just one of the two
 npx skills update                           # update to latest
 ```
 
+**The full Creative Agency pack** — `creative-director`, `image` and `video` in one command:
+
+```bash
+npx skills add https://skills.sh/p/nuK9jo3sTCZGB2Ul
+```
+
 **As a Claude Code plugin** — one managed bundle with both skills:
 
 ```
