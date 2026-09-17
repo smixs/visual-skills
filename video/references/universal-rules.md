@@ -182,6 +182,45 @@ When a prompt is overloaded (10+ scenes, many subjects, spatial tricks), adding 
 
 This ranks above prompt-length discipline: a shorter prompt with declared priorities beats a longer one without them.
 
+## 16. U15. Model validation
+
+Before writing a prompt, confirm the target model is supported. Supported models and their syntax files:
+
+| Model | Syntax file | Max prompt length |
+|-------|-------------|-------------------|
+| Seedance 2.5 | `seedance-25.md` | ~500 chars |
+| Kling 3.0 Turbo/Omni | `kling.md` | ~500 chars |
+| Veo 3.1 | `veo.md` | ~500 chars |
+| Runway Gen-4 | (universal rules) | ~300 chars |
+| Luma Ray 2 | (universal rules) | ~300 chars |
+| Pika 2.0 | (universal rules) | ~300 chars |
+
+If the user names a model not in this table, warn them: "I don't have syntax for [model]. I'll use universal rules — the result may not be optimal." Never guess model-specific syntax.
+
+## 17. U16. Aspect ratio and framing
+
+Match the output aspect ratio to the intended platform **before** writing the shot list:
+
+| Platform | Aspect ratio | Resolution |
+|----------|-------------|------------|
+| YouTube / Cinema | 16:9 | 1920×1080 |
+| TikTok / Reels / Shorts | 9:16 | 1080×1920 |
+| Instagram feed | 1:1 | 1080×1080 |
+| Instagram Stories | 9:16 | 1080×1920 |
+| Twitter/X | 16:9 | 1280×720 |
+
+When the user says "make a video" without specifying platform, ask. Vertical (9:16) framing requires different blocking than horizontal (16:9) — characters should be centered, not spread across the frame.
+
+## 18. U17. Prompt length discipline
+
+Every AI video model has a hard token limit. Exceeding it silently truncates the prompt, cutting critical details from the end.
+
+**Rules:**
+1. Keep individual shot prompts under 400 characters when possible.
+2. Multi-shot prompts (Seedance, Kling Omni): total under 800 characters.
+3. Count characters before outputting. If over limit, cut adjectives and environmental details first — never cut character action or camera direction.
+4. When a prompt must be long, split into multiple generation passes.
+
 ---
 
 *Author: Serge Shima ([t.me/aimastersme](https://t.me/aimastersme) · [sergeshima.com](https://sergeshima.com) · [aimasters.me](https://aimasters.me)) · License: CC BY 4.0 — attribution required · Source: [smixs/visual-skills](https://github.com/smixs/visual-skills)*
