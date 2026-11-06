@@ -2,7 +2,7 @@
 
 # 🎬 Visual Skills - AI-кинорежиссёр для вашего фильма
 
-![Visual Skills - один инструмент и для картинок, и для видео](assets/hero.webp)
+![Visual Skills - AI-режиссёр для вашего агента: режиссёрское кресло, камера на тележке и фигура с зонтом на дождливой неоновой улице](assets/hero.webp)
 
 [![skills.sh](https://skills.sh/b/smixs/visual-skills)](https://skills.sh/smixs/visual-skills)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)

@@ -2,7 +2,7 @@
 
 # 🎬 Visual Skills — AI Film Director for Your Movie
 
-![Visual Skills — one toolkit for both images and video](assets/hero.webp)
+![Visual Skills — AI film director for your agent: a directors chair, a camera on a dolly and a figure with an umbrella on a rainy neon street](assets/hero.webp)
 
 [![skills.sh](https://skills.sh/b/smixs/visual-skills)](https://skills.sh/smixs/visual-skills)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?style=flat-square)](https://docs.claude.com/en/docs/agents/agent-skills)
